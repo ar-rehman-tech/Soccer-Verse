@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Match Center - FC Barcelona vs Atlético Madrid. La Liga preview, predicted lineups, tactical pitch formations, and head-to-head records.">
+    <title>SoccerVerse - FC Barcelona vs Atlético Madrid (La Liga Match Center)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top:0;">
+        <!-- ── Match Center Hero Banner ── -->
+        <div class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="container detail-content">
+                <div class="breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <a href="games.html">Matches</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <span style="color:var(--accent-red);"><i class="fas fa-shield-alt" style="color:#FF3B5C;"></i> La Liga</span>
+                </div>
+
+                <div class="match-center-banner">
+                    <!-- Home Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"
+                            alt="FC Barcelona" class="detail-team-logo">
+                        <h2 class="detail-team-name">Barcelona</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">1st in La Liga</span>
+                    </div>
+
+                    <!-- Center Scoreboard -->
+                    <div class="detail-score-box">
+                        <div class="detail-score-status" style="background:rgba(255,59,92,0.15); color:var(--accent-red); border:1px solid rgba(255,59,92,0.4);">
+                            <i class="fas fa-clock" style="margin-right:4px;"></i> Kick-off 21:00 CET Today
+                        </div>
+                        <div class="detail-score-digits" style="color:var(--white); font-size:3.8rem;">
+                            VS
+                        </div>
+                        <div class="detail-match-info">
+                            <span><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Camp Nou</span>
+                            <span><i class="fas fa-tv" style="color:var(--secondary);"></i> Worldwide 4K Broadcast</span>
+                            <span><i class="fas fa-whistle" style="color:var(--accent-gold);"></i> Ref: J. M. Sánchez</span>
+                        </div>
+                        <div class="detail-actions-bar">
+                            <button type="button" class="btn btn-primary btn-sm btn-highlights"
+                                data-title="FC Barcelona vs Atlético Madrid (Matchday Preview & Tactical Breakdown)"
+                                data-desc="Lewandowski and Lamine Yamal face off against Simeone's reinforced Atlético defense at the Camp Nou."
+                                data-poster="https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                <i class="fas fa-play"></i> Watch Match Preview
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="showToast('Reminder set for kick-off at 21:00 CET! ⏰', 'info')">
+                                <i class="fas fa-bell"></i> Set Match Reminder
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Away Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png"
+                            alt="Atlético Madrid" class="detail-team-logo">
+                        <h2 class="detail-team-name">Atlético</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">3rd in La Liga</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Interactive Content Section ── -->
+        <section class="section">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="detail-nav-tabs">
+                    <button class="detail-nav-tab active" data-tab-target="tab-overview">
+                        <i class="fas fa-file-alt"></i> Match Preview & Key Battles
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-lineups">
+                        <i class="fas fa-futbol"></i> Predicted Lineups
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-stats">
+                        <i class="fas fa-chart-line"></i> Season Form & Telemetry
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-h2h">
+                        <i class="fas fa-history"></i> Head-to-Head Records
+                    </button>
+                </div>
+
+                <!-- ── TAB 1: PREVIEW ── -->
+                <div id="tab-overview" class="tab-pane active">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="overview-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-fire" style="color:var(--accent-red);"></i> Big Match Storylines</h3>
+                            <div class="glass" style="padding:26px; border-radius:18px; margin-bottom:24px;">
+                                <h4 style="color:var(--primary); margin-bottom:10px;">Flick's High Intensity vs Simeone's Defensive Fortress</h4>
+                                <p style="color:var(--secondary-text); font-size:0.95rem; line-height:1.7;">
+                                    Barcelona enter tonight's blockbuster in blistering domestic form, averaging 2.8 goals per match under Hansi Flick. The Catalan outfit will look to unlock Diego Simeone's resilient 5-man backline using the width of Lamine Yamal and Raphinha.
+                                </p>
+                            </div>
+
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-user-ninja" style="color:var(--accent-gold);"></i> Key Individual Matchup</h3>
+                            <div class="matchup-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                                <div class="glass" style="padding:20px; border-radius:14px; text-align:center;">
+                                    <div style="font-weight:800; color:var(--primary); font-size:1.1rem; margin-bottom:4px;">Robert Lewandowski</div>
+                                    <div style="color:var(--secondary-text); font-size:0.85rem; margin-bottom:12px;">FC Barcelona &bull; Striker</div>
+                                    <div style="display:flex; justify-content:space-around; font-size:0.85rem;">
+                                        <div><strong style="color:var(--white);">19</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">Goals</span></div>
+                                        <div><strong style="color:var(--white);">4.2</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">Shots/90</span></div>
+                                        <div><strong style="color:var(--white);">0.88</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">xG/90</span></div>
+                                    </div>
+                                </div>
+                                <div class="glass" style="padding:20px; border-radius:14px; text-align:center;">
+                                    <div style="font-weight:800; color:var(--secondary); font-size:1.1rem; margin-bottom:4px;">Antoine Griezmann</div>
+                                    <div style="color:var(--secondary-text); font-size:0.85rem; margin-bottom:12px;">Atlético Madrid &bull; Playmaker</div>
+                                    <div style="display:flex; justify-content:space-around; font-size:0.85rem;">
+                                        <div><strong style="color:var(--white);">14</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">Goals</span></div>
+                                        <div><strong style="color:var(--white);">8</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">Assists</span></div>
+                                        <div><strong style="color:var(--white);">2.8</strong><br><span style="color:var(--secondary-text); font-size:0.75rem;">Key Passes</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-chart-pie" style="color:var(--secondary);"></i> Win Probability</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-between; font-weight:700; font-size:0.9rem; margin-bottom:8px;">
+                                    <span style="color:var(--primary);">Barcelona 52%</span>
+                                    <span style="color:var(--secondary-text);">Draw 26%</span>
+                                    <span style="color:var(--secondary);">Atlético 22%</span>
+                                </div>
+                                <div class="prob-meter-track">
+                                    <div class="prob-fill-home" style="width: 52%;"></div>
+                                    <div class="prob-fill-draw" style="width: 26%;"></div>
+                                    <div class="prob-fill-away" style="width: 22%;"></div>
+                                </div>
+                                <div style="margin-top:20px; font-size:0.85rem; color:var(--secondary-text);">
+                                    <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--glass-border);">
+                                        <span>Current Form (Barça)</span>
+                                        <div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div>
+                                    </div>
+                                    <div style="display:flex; justify-content:space-between; padding:6px 0;">
+                                        <span>Current Form (Atleti)</span>
+                                        <div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 2: LINEUPS ── -->
+                <div id="tab-lineups" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="lineup-grid">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--primary);"></span>
+                                    <strong style="color:var(--white);">Barcelona (4-2-3-1)</strong>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <strong style="color:var(--secondary);">Atlético Madrid (5-3-2)</strong>
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--secondary);"></span>
+                                </div>
+                            </div>
+
+                            <div class="pitch-container">
+                                <div class="pitch-center-line"></div>
+                                <div class="pitch-center-circle"></div>
+
+                                <!-- Barcelona (Top) -->
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">1</div><span class="pitch-player-name">Ter Stegen (GK)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">23</div><span class="pitch-player-name">Koundé</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">4</div><span class="pitch-player-name">Araújo</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">2</div><span class="pitch-player-name">Cubarsí</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">3</div><span class="pitch-player-name">Balde</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">21</div><span class="pitch-player-name">De Jong</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">17</div><span class="pitch-player-name">Casadó</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">19</div><span class="pitch-player-name" style="border-color:var(--accent-gold); color:var(--accent-gold);">Yamal</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">20</div><span class="pitch-player-name">Olmo</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">11</div><span class="pitch-player-name">Raphinha</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">9</div><span class="pitch-player-name">Lewandowski (ST)</span></div>
+                                </div>
+
+                                <!-- Atlético (Bottom) -->
+                                <div class="pitch-lineup-row" style="margin-top:20px;">
+                                    <div class="pitch-player away"><div class="pitch-player-num">7</div><span class="pitch-player-name">Griezmann</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">19</div><span class="pitch-player-name">J. Alvarez</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">5</div><span class="pitch-player-name">De Paul</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">6</div><span class="pitch-player-name">Koke (C)</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">4</div><span class="pitch-player-name">Gallagher</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">14</div><span class="pitch-player-name">Llorente</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">24</div><span class="pitch-player-name">Le Normand</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">2</div><span class="pitch-player-name">Giménez</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">23</div><span class="pitch-player-name">Reinildo</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">12</div><span class="pitch-player-name">Lino</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">13</div><span class="pitch-player-name">Oblak (GK)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bench -->
+                        <div>
+                            <div class="glass" style="padding:22px; border-radius:16px; margin-bottom:24px;">
+                                <h4 style="margin-bottom:12px; color:var(--primary);"><i class="fas fa-user-tie"></i> Managers</h4>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0; border-bottom:1px solid var(--glass-border);">
+                                    <span>Hansi Flick</span>
+                                    <span style="color:var(--secondary-text);">FC Barcelona</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0;">
+                                    <span>Diego Simeone</span>
+                                    <span style="color:var(--secondary-text);">Atlético Madrid</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:12px;"><i class="fas fa-users-cog"></i> Bench & Reserves</h4>
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--primary); margin-top:8px;">Barcelona</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">8</span> Pedri</div>
+                                    <div class="bench-player"><span class="bench-num">6</span> Gavi</div>
+                                    <div class="bench-player"><span class="bench-num">7</span> Ferran</div>
+                                    <div class="bench-player"><span class="bench-num">13</span> Iñaki Peña (GK)</div>
+                                </div>
+
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--secondary); margin-top:16px;">Atlético Madrid</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">9</span> Sørloth</div>
+                                    <div class="bench-player"><span class="bench-num">10</span> Correa</div>
+                                    <div class="bench-player"><span class="bench-num">8</span> Barrios</div>
+                                    <div class="bench-player"><span class="bench-num">1</span> Musso (GK)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 3: STATS ── -->
+                <div id="tab-stats" class="tab-pane">
+                    <div class="glass" style="padding:35px; border-radius:20px; max-width:900px; margin:0 auto;">
+                        <h3 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">Season Comparison Telemetry</h3>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">2.80</span>
+                                <span class="stat-comp-label">Goals Per Match</span>
+                                <span style="color:var(--secondary);">2.10</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 57%;"></div>
+                                <div class="stat-bar-away" style="width: 43%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">64%</span>
+                                <span class="stat-comp-label">Avg Possession</span>
+                                <span style="color:var(--secondary);">48%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 64%;"></div>
+                                <div class="stat-bar-away" style="width: 36%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">12</span>
+                                <span class="stat-comp-label">Clean Sheets</span>
+                                <span style="color:var(--secondary);">14</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 46%;"></div>
+                                <div class="stat-bar-away" style="width: 54%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">89.4%</span>
+                                <span class="stat-comp-label">Pass Accuracy</span>
+                                <span style="color:var(--secondary);">84.2%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 52%;"></div>
+                                <div class="stat-bar-away" style="width: 48%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 4: H2H ── -->
+                <div id="tab-h2h" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:35px;" class="h2h-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-history" style="color:var(--primary);"></i> Recent Encounters</h3>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Atlético Madrid 0 - 3 Barcelona</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Metropolitano (Lewandowski, Felix, Fermin)</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Barcelona 1 - 0 Atlético Madrid</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Montjuïc (Joao Felix 28')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Barcelona 1 - 0 Atlético Madrid</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Camp Nou (Ferran Torres 44')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Atlético Madrid 0 - 1 Barcelona</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Metropolitano (Dembele 22')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-trophy" style="color:var(--accent-gold);"></i> Head-to-Head Record</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-around; text-align:center; margin-bottom:20px;">
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--primary);">108</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Barça Wins</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary-text);">56</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Draws</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary);">76</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Atleti Wins</div>
+                                    </div>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--secondary-text); line-height:1.6; margin-bottom:0;">
+                                    FC Barcelona have won their last 4 consecutive matches against Atlético Madrid in La Liga without conceding a single goal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

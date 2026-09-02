@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoccerVerse Matches - Live football scores, today's fixtures, upcoming matchdays, and full-time results across Europe's top leagues.">
+    <title>SoccerVerse - Live Matches & Global Fixtures Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper">
+        <div class="page-header">
+            <div class="container">
+                <span class="section-subtitle">Real-Time Telemetry</span>
+                <h1>Live Matches & Fixtures</h1>
+                <p>Track live scores, match momentum, upcoming derbies, and verified results across world football.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                
+                <!-- Filter Tabs -->
+                <div class="filter-tabs-wrap" id="match-filter-tabs">
+                    <button class="tab-btn active" data-filter="all">
+                        <i class="fas fa-layer-group"></i> All Matches <span class="badge-count" id="count-all">10</span>
+                    </button>
+                    <button class="tab-btn" data-filter="live">
+                        <i class="fas fa-broadcast-tower" style="color:var(--primary);"></i> Live Now <span class="badge-count" id="count-live">3</span>
+                    </button>
+                    <button class="tab-btn" data-filter="today">
+                        <i class="fas fa-calendar-day"></i> Today <span class="badge-count" id="count-today">3</span>
+                    </button>
+                    <button class="tab-btn" data-filter="upcoming">
+                        <i class="fas fa-clock"></i> Upcoming <span class="badge-count" id="count-upcoming">2</span>
+                    </button>
+                    <button class="tab-btn" data-filter="results">
+                        <i class="fas fa-check-double"></i> Results <span class="badge-count" id="count-results">2</span>
+                    </button>
+                </div>
+
+                <!-- Secondary Search & League Filter Bar -->
+                <div class="glass games-search-bar" style="border-radius:14px; padding:16px 20px; margin-bottom:35px; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+                    <div style="flex:1; min-width:240px; position:relative;">
+                        <i class="fas fa-search" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--secondary-text);"></i>
+                        <input type="text" id="match-search-input" class="form-control" placeholder="Search team, stadium or league..." style="padding-left:44px; margin-bottom:0; background:rgba(5,7,13,0.6);">
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;" id="league-chips">
+                        <button class="comp-chip active" data-league="all">All Leagues</button>
+                        <button class="comp-chip" data-league="ucl">Champions League</button>
+                        <button class="comp-chip" data-league="epl">Premier League</button>
+                        <button class="comp-chip" data-league="laliga">La Liga</button>
+                        <button class="comp-chip" data-league="seriea">Serie A</button>
+                        <button class="comp-chip" data-league="bundesliga">Bundesliga</button>
+                        <button class="comp-chip" data-league="ligue1">Ligue 1</button>
+                    </div>
+                </div>
+
+                <!-- Matches Grid Container -->
+                <div class="matches-grid" id="matches-container">
+                    
+                    <!-- Match 1 (Live - UCL) -->
+                    <div class="match-card glass match-item" data-type="live" data-league="ucl" data-keywords="real madrid manchester city santiago bernabeu ucl champions league">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-trophy" style="color:var(--accent-gold)"></i> Champions League</span>
+                            <div class="match-status live">78' LIVE</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="team-logo" alt="Real Madrid">
+                                </div>
+                                <span class="team-name">Real Madrid</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">2</span> - <span>1</span>
+                                </div>
+                                <div class="match-time-tag">2nd Half</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" class="team-logo" alt="Man City">
+                                </div>
+                                <span class="team-name">Man City</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Santiago Bernabéu</span>
+                            <a href="detail1.html" class="match-btn-link">Match Center <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 2 (Live - Serie A) -->
+                    <div class="match-card glass match-item" data-type="live" data-league="seriea" data-keywords="ac milan inter milano derby della madonnina san siro serie a">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00FFB3"></i> Serie A</span>
+                            <div class="match-status live">45' HT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1200px-Logo_of_AC_Milan.svg.png" class="team-logo" alt="AC Milan">
+                                </div>
+                                <span class="team-name">AC Milan</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">1</span> - <span>0</span>
+                                </div>
+                                <div class="match-time-tag">Halftime</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png" class="team-logo" alt="Inter">
+                                </div>
+                                <span class="team-name">Inter</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> San Siro</span>
+                            <a href="detail4.html" class="match-btn-link">Match Center <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 3 (Live - Premier League) -->
+                    <div class="match-card glass match-item" data-type="live" data-league="epl" data-keywords="liverpool chelsea anfield premier league epl">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00D4FF"></i> Premier League</span>
+                            <div class="match-status live">62' LIVE</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" class="team-logo" alt="Liverpool">
+                                </div>
+                                <span class="team-name">Liverpool</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">2</span> - <span class="score-highlight">2</span>
+                                </div>
+                                <div class="match-time-tag">2nd Half</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" class="team-logo" alt="Chelsea">
+                                </div>
+                                <span class="team-name">Chelsea</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Anfield</span>
+                            <a href="detail2.html" class="match-btn-link">Match Center <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 4 (Today - La Liga) -->
+                    <div class="match-card glass match-item" data-type="today" data-league="laliga" data-keywords="barcelona atletico madrid camp nou la liga">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#FF3B5C"></i> La Liga</span>
+                            <div class="match-status upcoming">21:00 Today</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" class="team-logo" alt="Barcelona">
+                                </div>
+                                <span class="team-name">Barcelona</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Kick-off 21:00</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png" class="team-logo" alt="Atlético">
+                                </div>
+                                <span class="team-name">Atlético</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Camp Nou</span>
+                            <a href="detail3.html" class="match-btn-link">Preview <i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 5 (Today - Premier League) -->
+                    <div class="match-card glass match-item" data-type="today" data-league="epl" data-keywords="tottenham hotspur aston villa tottenham stadium epl">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00D4FF"></i> Premier League</span>
+                            <div class="match-status upcoming">19:30 Today</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png" class="team-logo" alt="Tottenham">
+                                </div>
+                                <span class="team-name">Tottenham</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Kick-off 19:30</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Aston_Villa_logo.svg/1200px-Aston_Villa_logo.svg.png" class="team-logo" alt="Aston Villa">
+                                </div>
+                                <span class="team-name">Aston Villa</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Tottenham Hotspur Stadium</span>
+                            <a href="detail2.html" class="match-btn-link">Preview <i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 6 (Today - Bundesliga) -->
+                    <div class="match-card glass match-item" data-type="today" data-league="bundesliga" data-keywords="bayer leverkusen rb leipzig bayarena bundesliga">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#FFD700"></i> Bundesliga</span>
+                            <div class="match-status upcoming">18:30 Today</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1200px-Bayer_04_Leverkusen_logo.svg.png" class="team-logo" alt="Leverkusen">
+                                </div>
+                                <span class="team-name">Leverkusen</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Kick-off 18:30</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/RB_Leipzig_2014_logo.svg/1200px-RB_Leipzig_2014_logo.svg.png" class="team-logo" alt="RB Leipzig">
+                                </div>
+                                <span class="team-name">RB Leipzig</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> BayArena</span>
+                            <a href="detail5.html" class="match-btn-link">Preview <i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 7 (Results - Premier League) -->
+                    <div class="match-card glass match-item" data-type="results" data-league="epl" data-keywords="arsenal manchester united emirates stadium premier league epl results">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00D4FF"></i> Premier League</span>
+                            <div class="match-status ft">FT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" class="team-logo" alt="Arsenal">
+                                </div>
+                                <span class="team-name">Arsenal</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">3</span> - <span>1</span>
+                                </div>
+                                <div class="match-time-tag" style="color:var(--secondary-text);">Completed</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" class="team-logo" alt="Man Utd">
+                                </div>
+                                <span class="team-name">Man Utd</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Emirates Stadium</span>
+                            <a href="detail2.html" class="match-btn-link">Highlights <i class="fas fa-play-circle"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 8 (Results - Bundesliga) -->
+                    <div class="match-card glass match-item" data-type="results" data-league="bundesliga" data-keywords="bayern munchen borussia dortmund der klassiker allianz arena bundesliga results">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#FFD700"></i> Bundesliga</span>
+                            <div class="match-status ft">FT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" class="team-logo" alt="Bayern">
+                                </div>
+                                <span class="team-name">Bayern</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span>2</span> - <span>2</span>
+                                </div>
+                                <div class="match-time-tag" style="color:var(--secondary-text);">Completed</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png" class="team-logo" alt="Dortmund">
+                                </div>
+                                <span class="team-name">Dortmund</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Allianz Arena</span>
+                            <a href="detail5.html" class="match-btn-link">Highlights <i class="fas fa-play-circle"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 9 (Upcoming - Ligue 1) -->
+                    <div class="match-card glass match-item" data-type="upcoming" data-league="ligue1" data-keywords="paris saint germain marseille le classique parc des princes ligue 1">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#8B5CF6"></i> Ligue 1</span>
+                            <div class="match-status upcoming">Tomorrow 20:45</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png" class="team-logo" alt="PSG">
+                                </div>
+                                <span class="team-name">PSG</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Le Classique</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Olympique_de_Marseille_logo.svg/1200px-Olympique_de_Marseille_logo.svg.png" class="team-logo" alt="Marseille">
+                                </div>
+                                <span class="team-name">Marseille</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Parc des Princes</span>
+                            <a href="detail6.html" class="match-btn-link">Preview <i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Match 10 (Upcoming - Serie A) -->
+                    <div class="match-card glass match-item" data-type="upcoming" data-league="seriea" data-keywords="juventus napoli allianz stadium serie a">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00FFB3"></i> Serie A</span>
+                            <div class="match-status upcoming">Sunday 20:45</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Juventus_FC_2017_logo.svg/1200px-Juventus_FC_2017_logo.svg.png" class="team-logo" alt="Juventus">
+                                </div>
+                                <span class="team-name">Juventus</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Matchday 32</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SSC_Napoli_2021.svg/1200px-SSC_Napoli_2021.svg.png" class="team-logo" alt="Napoli">
+                                </div>
+                                <span class="team-name">Napoli</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Allianz Stadium Turin</span>
+                            <a href="detail4.html" class="match-btn-link">Preview <i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-matches-found" class="glass" style="display:none; text-align:center; padding:60px 20px; border-radius:18px; margin-top:20px;">
+                    <i class="fas fa-futbol" style="font-size:3rem; color:var(--secondary-text); margin-bottom:15px; opacity:0.4;"></i>
+                    <h3 style="margin-bottom:10px;">No Matches Found</h3>
+                    <p style="color:var(--secondary-text); max-width:400px; margin:0 auto 20px;">There are no matches matching the selected filters and search query.</p>
+                    <button class="btn btn-primary btn-sm" id="reset-matches-btn">Reset All Filters</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('#match-filter-tabs .tab-btn');
+            const leagueChips = document.querySelectorAll('#league-chips .comp-chip');
+            const searchInput = document.getElementById('match-search-input');
+            const matchItems = document.querySelectorAll('.match-item');
+            const emptyState = document.getElementById('no-matches-found');
+            const resetBtn = document.getElementById('reset-matches-btn');
+
+            let currentType = 'all';
+            let currentLeague = 'all';
+            let searchQuery = '';
+
+            // Check URL param e.g. ?league=ucl
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialLeague = urlParams.get('league');
+            if (initialLeague) {
+                currentLeague = initialLeague;
+                leagueChips.forEach(chip => {
+                    chip.classList.toggle('active', chip.getAttribute('data-league') === initialLeague);
+                });
+            }
+
+            function applyFilters() {
+                let visibleCount = 0;
+
+                matchItems.forEach(item => {
+                    const matchType = item.getAttribute('data-type');
+                    const matchLeague = item.getAttribute('data-league');
+                    const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+
+                    const matchesType = (currentType === 'all') || (matchType === currentType);
+                    const matchesLeague = (currentLeague === 'all') || (matchLeague === currentLeague);
+                    const matchesSearch = !searchQuery || keywords.includes(searchQuery);
+
+                    if (matchesType && matchesLeague && matchesSearch) {
+                        item.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (emptyState) {
+                    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
+            }
+
+            // Tab click
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentType = btn.getAttribute('data-filter');
+                    applyFilters();
+                });
+            });
+
+            // League chip click
+            leagueChips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    leagueChips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    currentLeague = chip.getAttribute('data-league');
+                    applyFilters();
+                });
+            });
+
+            // Search input
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                applyFilters();
+            });
+
+            // Reset filters
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    currentType = 'all';
+                    currentLeague = 'all';
+                    searchQuery = '';
+                    searchInput.value = '';
+                    filterBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-filter') === 'all'));
+                    leagueChips.forEach(c => c.classList.toggle('active', c.getAttribute('data-league') === 'all'));
+                    applyFilters();
+                });
+            }
+
+            applyFilters();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoccerVerse - The ultimate next-generation football telemetry, live scores, FUT player analytics, and match highlights platform.">
+    <title>SoccerVerse - Premium Football Experience & Live Telemetry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="home">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top: 0;">
+
+        <!-- ── Hero Section ── -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tag">
+                        <i class="fas fa-bolt"></i> 2026 Next-Gen Football Hub
+                    </div>
+                    <h1>Where Passion Meets<br><span>Precision</span><br>Football</h1>
+                    <p>Enter the world's most immersive football platform. Experience real-time match telemetry, tactical momentum charts, interactive highlights, and EA-style Ultimate Team player intelligence.</p>
+                    <div class="hero-actions">
+                        <a href="games.html" class="btn btn-primary">
+                            Explore Matches <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <button type="button" class="btn btn-outline btn-highlights" data-title="El Clásico & UCL Thrillers" data-desc="Real Madrid 2 - 1 Manchester City & Arsenal 3 - 1 Manchester United complete multi-angle highlight packages.">
+                            <i class="fas fa-play"></i> Watch Highlights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-player-wrapper">
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Professional football player in action on pitch" class="hero-player">
+                        <div class="hero-player-gradient"></div>
+                    </div>
+
+                    <!-- Floating Live Match Widget -->
+                    <div class="glass floating-stat stat-1">
+                        <h4><i class="fas fa-broadcast-tower" style="color:var(--primary); margin-right:4px;"></i> Live UCL Final</h4>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:4px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+                                width="30" height="30" alt="Real Madrid" style="object-fit:contain;">
+                            <span class="val">2 - 1</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png"
+                                width="30" height="30" alt="Manchester City" style="object-fit:contain;">
+                        </div>
+                        <div style="font-size:0.75rem; color:var(--primary); font-weight:700; margin-top:2px;">78' 2nd Half</div>
+                    </div>
+
+                    <!-- Floating Top Performer Widget -->
+                    <div class="glass floating-stat stat-2">
+                        <h4><i class="fas fa-crown" style="color:var(--accent-gold); margin-right:4px;"></i> Golden Boot Leader</h4>
+                        <div style="display:flex; align-items:baseline; gap:8px;">
+                            <span class="val">Haaland</span>
+                            <span style="color:#FFD700; font-weight:800; font-size:1.1rem;">36 G</span>
+                        </div>
+                        <div style="font-size:0.75rem; color:var(--secondary-text);">Man City &bull; 1.12 Goals/90</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Live Platform Stats Strip ── -->
+        <div class="stats-strip">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Global Leagues</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">1,500+</div>
+                        <div class="stat-label">Professional Clubs</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">40,000+</div>
+                        <div class="stat-label">Players Tracked</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">Data Accuracy</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">Monthly Fans</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Live Match Center ── -->
+        <section class="section" style="background: linear-gradient(180deg, var(--background) 0%, var(--surface) 100%);">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Real-Time Action</span>
+                    <h2 class="section-title">Live Match Center</h2>
+                    <p class="section-desc">Instant scorelines, live possession metrics, and comprehensive match center telemetry across major European competitions.</p>
+                </div>
+
+                <div class="matches-grid">
+                    <!-- Match 1 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-trophy" style="color:var(--accent-gold)"></i> Champions League</span>
+                            <div class="match-status live">78' LIVE</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+                                        class="team-logo" alt="Real Madrid Crest">
+                                </div>
+                                <span class="team-name">Real Madrid</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">2</span> - <span>1</span>
+                                </div>
+                                <div class="match-time-tag">2nd Half</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png"
+                                        class="team-logo" alt="Man City Crest">
+                                </div>
+                                <span class="team-name">Man City</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Santiago Bernabéu</span>
+                            <a href="detail1.html" class="match-btn-link">
+                                Match Center <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Match 2 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00D4FF"></i> Premier League</span>
+                            <div class="match-status ft">FT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png"
+                                        class="team-logo" alt="Arsenal Crest">
+                                </div>
+                                <span class="team-name">Arsenal</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">3</span> - <span>1</span>
+                                </div>
+                                <div class="match-time-tag" style="color:var(--secondary-text);">Completed</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png"
+                                        class="team-logo" alt="Man United Crest">
+                                </div>
+                                <span class="team-name">Man Utd</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Emirates Stadium</span>
+                            <a href="detail2.html" class="match-btn-link">
+                                Highlights <i class="fas fa-play-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Match 3 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#FF3B5C"></i> La Liga</span>
+                            <div class="match-status upcoming">21:00 Today</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"
+                                        class="team-logo" alt="Barcelona Crest">
+                                </div>
+                                <span class="team-name">Barcelona</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Kick-off 21:00</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png"
+                                        class="team-logo" alt="Atletico Madrid Crest">
+                                </div>
+                                <span class="team-name">Atlético</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Camp Nou</span>
+                            <a href="detail3.html" class="match-btn-link">
+                                Preview <i class="fas fa-file-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Match 4 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#00FFB3"></i> Serie A</span>
+                            <div class="match-status live">45' HT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1200px-Logo_of_AC_Milan.svg.png"
+                                        class="team-logo" alt="AC Milan Crest">
+                                </div>
+                                <span class="team-name">AC Milan</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span class="score-highlight">1</span> - <span>0</span>
+                                </div>
+                                <div class="match-time-tag">Halftime</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png"
+                                        class="team-logo" alt="Inter Crest">
+                                </div>
+                                <span class="team-name">Inter</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> San Siro</span>
+                            <a href="detail4.html" class="match-btn-link">
+                                Match Center <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Match 5 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#FFD700"></i> Bundesliga</span>
+                            <div class="match-status ft">FT</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+                                        class="team-logo" alt="Bayern Munich Crest">
+                                </div>
+                                <span class="team-name">Bayern</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-score">
+                                    <span>2</span> - <span>2</span>
+                                </div>
+                                <div class="match-time-tag" style="color:var(--secondary-text);">Completed</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png"
+                                        class="team-logo" alt="Borussia Dortmund Crest">
+                                </div>
+                                <span class="team-name">Dortmund</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Allianz Arena</span>
+                            <a href="detail5.html" class="match-btn-link">
+                                Highlights <i class="fas fa-play-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Match 6 -->
+                    <div class="match-card glass">
+                        <div class="match-header">
+                            <span class="match-league"><i class="fas fa-shield-alt" style="color:#8B5CF6"></i> Ligue 1</span>
+                            <div class="match-status upcoming">Tomorrow 20:45</div>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png"
+                                        class="team-logo" alt="PSG Crest">
+                                </div>
+                                <span class="team-name">PSG</span>
+                            </div>
+                            <div class="match-score-center">
+                                <div class="match-vs">VS</div>
+                                <div class="match-time-tag">Le Classique</div>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo-wrap">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Olympique_de_Marseille_logo.svg/1200px-Olympique_de_Marseille_logo.svg.png"
+                                        class="team-logo" alt="Marseille Crest">
+                                </div>
+                                <span class="team-name">Marseille</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <span class="match-venue"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Parc des Princes</span>
+                            <a href="detail6.html" class="match-btn-link">
+                                Preview <i class="fas fa-file-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:40px;">
+                    <a href="games.html" class="btn btn-outline">
+                        View All Fixtures & Live Scores <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Team of the Week (FUT Style) ── -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Weekly Special Cards</span>
+                    <h2 class="section-title">Team of the Week</h2>
+                    <p class="section-desc">Top standout performers updated weekly based on real-world match telemetry and analytical rating models.</p>
+                </div>
+
+                <div class="players-grid">
+                    <!-- Player 1: Mbappé -->
+                    <div class="fut-card" onclick="location.href='players.html'">
+                        <div class="fut-header">
+                            <div class="fut-meta">
+                                <div class="fut-rating">97</div>
+                                <div class="fut-pos">ST</div>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png" class="fut-badge-icon" alt="France">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="fut-club-icon" alt="Real Madrid">
+                            </div>
+                            <div class="fut-img-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Kylian_Mbapp%C3%A9_2018.jpg/800px-Kylian_Mbapp%C3%A9_2018.jpg" class="fut-img" alt="Kylian Mbappé">
+                            </div>
+                        </div>
+                        <div class="fut-body">
+                            <div class="fut-name">MBAPPÉ</div>
+                            <div class="fut-stats">
+                                <div class="fut-stat"><span class="stat-val">99</span> <span class="stat-lbl">PAC</span></div>
+                                <div class="fut-stat"><span class="stat-val">95</span> <span class="stat-lbl">DRI</span></div>
+                                <div class="fut-stat"><span class="stat-val">94</span> <span class="stat-lbl">SHO</span></div>
+                                <div class="fut-stat"><span class="stat-val">40</span> <span class="stat-lbl">DEF</span></div>
+                                <div class="fut-stat"><span class="stat-val">88</span> <span class="stat-lbl">PAS</span></div>
+                                <div class="fut-stat"><span class="stat-val">80</span> <span class="stat-lbl">PHY</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player 2: Haaland -->
+                    <div class="fut-card" onclick="location.href='players.html'">
+                        <div class="fut-header">
+                            <div class="fut-meta">
+                                <div class="fut-rating">95</div>
+                                <div class="fut-pos">ST</div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/1200px-Flag_of_Norway.svg.png" class="fut-badge-icon" alt="Norway">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" class="fut-club-icon" alt="Man City">
+                            </div>
+                            <div class="fut-img-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Erling_Haaland_2023_%28cropped%29.jpg/800px-Erling_Haaland_2023_%28cropped%29.jpg" class="fut-img" alt="Erling Haaland">
+                            </div>
+                        </div>
+                        <div class="fut-body">
+                            <div class="fut-name">HAALAND</div>
+                            <div class="fut-stats">
+                                <div class="fut-stat"><span class="stat-val">90</span> <span class="stat-lbl">PAC</span></div>
+                                <div class="fut-stat"><span class="stat-val">85</span> <span class="stat-lbl">DRI</span></div>
+                                <div class="fut-stat"><span class="stat-val">96</span> <span class="stat-lbl">SHO</span></div>
+                                <div class="fut-stat"><span class="stat-val">45</span> <span class="stat-lbl">DEF</span></div>
+                                <div class="fut-stat"><span class="stat-val">75</span> <span class="stat-lbl">PAS</span></div>
+                                <div class="fut-stat"><span class="stat-val">92</span> <span class="stat-lbl">PHY</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player 3: Bellingham -->
+                    <div class="fut-card" onclick="location.href='players.html'">
+                        <div class="fut-header">
+                            <div class="fut-meta">
+                                <div class="fut-rating">96</div>
+                                <div class="fut-pos">CAM</div>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png" class="fut-badge-icon" alt="England">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="fut-club-icon" alt="Real Madrid">
+                            </div>
+                            <div class="fut-img-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jude_Bellingham_2024.jpg/800px-Jude_Bellingham_2024.jpg" class="fut-img" alt="Jude Bellingham">
+                            </div>
+                        </div>
+                        <div class="fut-body">
+                            <div class="fut-name">BELLINGHAM</div>
+                            <div class="fut-stats">
+                                <div class="fut-stat"><span class="stat-val">85</span> <span class="stat-lbl">PAC</span></div>
+                                <div class="fut-stat"><span class="stat-val">92</span> <span class="stat-lbl">DRI</span></div>
+                                <div class="fut-stat"><span class="stat-val">88</span> <span class="stat-lbl">SHO</span></div>
+                                <div class="fut-stat"><span class="stat-val">82</span> <span class="stat-lbl">DEF</span></div>
+                                <div class="fut-stat"><span class="stat-val">90</span> <span class="stat-lbl">PAS</span></div>
+                                <div class="fut-stat"><span class="stat-val">88</span> <span class="stat-lbl">PHY</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player 4: Vinícius Júnior -->
+                    <div class="fut-card" onclick="location.href='players.html'">
+                        <div class="fut-header">
+                            <div class="fut-meta">
+                                <div class="fut-rating">95</div>
+                                <div class="fut-pos">LW</div>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png" class="fut-badge-icon" alt="Brazil">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="fut-club-icon" alt="Real Madrid">
+                            </div>
+                            <div class="fut-img-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Vinicius_Junior_2021.jpg/800px-Vinicius_Junior_2021.jpg" class="fut-img" alt="Vinícius Júnior">
+                            </div>
+                        </div>
+                        <div class="fut-body">
+                            <div class="fut-name">VINI JR.</div>
+                            <div class="fut-stats">
+                                <div class="fut-stat"><span class="stat-val">98</span> <span class="stat-lbl">PAC</span></div>
+                                <div class="fut-stat"><span class="stat-val">94</span> <span class="stat-lbl">DRI</span></div>
+                                <div class="fut-stat"><span class="stat-val">86</span> <span class="stat-lbl">SHO</span></div>
+                                <div class="fut-stat"><span class="stat-val">35</span> <span class="stat-lbl">DEF</span></div>
+                                <div class="fut-stat"><span class="stat-val">84</span> <span class="stat-lbl">PAS</span></div>
+                                <div class="fut-stat"><span class="stat-val">75</span> <span class="stat-lbl">PHY</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:40px;">
+                    <a href="players.html" class="btn btn-outline">
+                        Explore Full Player Database <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Latest Highlights & Video Hub ── -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Official 4K Broadcasts</span>
+                    <h2 class="section-title">Latest Match Highlights</h2>
+                    <p class="section-desc">Watch thrilling moments, key goals, and tactical match recaps directly on the SoccerVerse platform.</p>
+                </div>
+
+                <div class="highlights-grid">
+                    <!-- Highlight Card 1 -->
+                    <div class="highlight-card" onclick="openHighlightsModal('Real Madrid 2 - 1 Manchester City', 'Champions League semi-final thriller at the Santiago Bernabéu with decisive goals from Vini Jr and Bellingham.', 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="highlight-thumb">
+                            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Real Madrid vs Man City Highlights">
+                            <div class="highlight-play-btn"><i class="fas fa-play"></i></div>
+                            <div class="highlight-duration">08:45</div>
+                        </div>
+                        <div class="highlight-content">
+                            <div class="highlight-competition">UEFA Champions League</div>
+                            <h3 class="highlight-title">Real Madrid vs Man City: Full Extended Highlights</h3>
+                            <div class="highlight-meta">
+                                <span><i class="far fa-eye"></i> 1.8M views</span>
+                                <span><i class="far fa-clock"></i> 2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card 2 -->
+                    <div class="highlight-card" onclick="openHighlightsModal('Arsenal 3 - 1 Manchester United', 'Dramatic stoppage time goals from Declan Rice and Gabriel Jesus seal a classic Emirates Stadium victory.', 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="highlight-thumb">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Arsenal vs Man United Highlights">
+                            <div class="highlight-play-btn"><i class="fas fa-play"></i></div>
+                            <div class="highlight-duration">06:20</div>
+                        </div>
+                        <div class="highlight-content">
+                            <div class="highlight-competition">Premier League</div>
+                            <h3 class="highlight-title">Arsenal vs Man United: Late Drama & Goals</h3>
+                            <div class="highlight-meta">
+                                <span><i class="far fa-eye"></i> 2.4M views</span>
+                                <span><i class="far fa-clock"></i> Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card 3 -->
+                    <div class="highlight-card" onclick="openHighlightsModal('Bayern Munich 2 - 2 Borussia Dortmund', 'Four-goal thriller in Der Klassiker featuring wonder strikes and electric attacking football.', 'https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')">
+                        <div class="highlight-thumb">
+                            <img src="https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Der Klassiker Highlights">
+                            <div class="highlight-play-btn"><i class="fas fa-play"></i></div>
+                            <div class="highlight-duration">07:15</div>
+                        </div>
+                        <div class="highlight-content">
+                            <div class="highlight-competition">Bundesliga</div>
+                            <h3 class="highlight-title">Bayern vs Dortmund: Der Klassiker 4-Goal Epic</h3>
+                            <div class="highlight-meta">
+                                <span><i class="far fa-eye"></i> 950K views</span>
+                                <span><i class="far fa-clock"></i> 2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Quick League Standings Snippet ── -->
+        <section class="section">
+            <div class="container">
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:30px; flex-wrap:wrap; gap:16px;">
+                    <div>
+                        <span class="section-subtitle">European Elite</span>
+                        <h2 class="section-title" style="margin-bottom:0; text-align:left;">La Liga Standings</h2>
+                    </div>
+                    <a href="scores.html" class="btn btn-outline btn-sm">Full Standings Center <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th class="center">Pos</th>
+                                <th>Club</th>
+                                <th class="center">P</th>
+                                <th class="center">W</th>
+                                <th class="center">D</th>
+                                <th class="center">L</th>
+                                <th class="center">GF</th>
+                                <th class="center">GA</th>
+                                <th class="center">GD</th>
+                                <th class="center">PTS</th>
+                                <th>Recent Form</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="standings-row">
+                                <td class="center"><span class="pos-cell pos-ucl">1</span></td>
+                                <td>
+                                    <div class="team-cell">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" alt="Real Madrid">
+                                        <span>Real Madrid</span>
+                                    </div>
+                                </td>
+                                <td class="center">38</td>
+                                <td class="center">29</td>
+                                <td class="center">8</td>
+                                <td class="center">1</td>
+                                <td class="center">87</td>
+                                <td class="center">26</td>
+                                <td class="center" style="color:var(--primary); font-weight:700;">+61</td>
+                                <td class="center pts-cell">95</td>
+                                <td>
+                                    <div class="form-badges">
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge d">D</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge w">W</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="standings-row">
+                                <td class="center"><span class="pos-cell pos-ucl">2</span></td>
+                                <td>
+                                    <div class="team-cell">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="Barcelona">
+                                        <span>Barcelona</span>
+                                    </div>
+                                </td>
+                                <td class="center">38</td>
+                                <td class="center">26</td>
+                                <td class="center">7</td>
+                                <td class="center">5</td>
+                                <td class="center">79</td>
+                                <td class="center">44</td>
+                                <td class="center" style="color:var(--primary); font-weight:700;">+35</td>
+                                <td class="center pts-cell">85</td>
+                                <td>
+                                    <div class="form-badges">
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge l">L</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge d">D</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="standings-row">
+                                <td class="center"><span class="pos-cell pos-ucl">3</span></td>
+                                <td>
+                                    <div class="team-cell">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png" alt="Atlético Madrid">
+                                        <span>Atlético Madrid</span>
+                                    </div>
+                                </td>
+                                <td class="center">38</td>
+                                <td class="center">24</td>
+                                <td class="center">4</td>
+                                <td class="center">10</td>
+                                <td class="center">70</td>
+                                <td class="center">43</td>
+                                <td class="center" style="color:var(--primary); font-weight:700;">+27</td>
+                                <td class="center pts-cell">76</td>
+                                <td>
+                                    <div class="form-badges">
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge w">W</span>
+                                        <span class="form-badge l">L</span>
+                                        <span class="form-badge w">W</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

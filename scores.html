@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoccerVerse Standings & Live Scores - Real-time league tables, European qualification cut-offs, top scorers, and live telemetry across Europe's top 5 leagues.">
+    <title>SoccerVerse - Standings & Live Scores Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="scores">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper">
+        <div class="page-header">
+            <div class="container">
+                <span class="section-subtitle">Real-Time Standings & Telemetry</span>
+                <h1>League Tables & Live Center</h1>
+                <p>Track live league standings, European qualification race, goal difference metrics, and top scorer leaders.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div style="display:grid; grid-template-columns: 2.2fr 1fr; gap: 35px;" class="scores-layout-grid">
+                    
+                    <!-- Main Standings Tables Area -->
+                    <div>
+                        <!-- League Selector Tabs -->
+                        <div class="detail-nav-tabs" style="margin-bottom:25px;">
+                            <button class="detail-nav-tab active" data-tab-target="standings-epl">
+                                <i class="fas fa-shield-alt" style="color:#00D4FF;"></i> Premier League
+                            </button>
+                            <button class="detail-nav-tab" data-tab-target="standings-ucl">
+                                <i class="fas fa-trophy" style="color:var(--accent-gold);"></i> Champions League
+                            </button>
+                            <button class="detail-nav-tab" data-tab-target="standings-laliga">
+                                <i class="fas fa-shield-alt" style="color:#FF3B5C;"></i> La Liga
+                            </button>
+                            <button class="detail-nav-tab" data-tab-target="standings-seriea">
+                                <i class="fas fa-shield-alt" style="color:#00FFB3;"></i> Serie A
+                            </button>
+                            <button class="detail-nav-tab" data-tab-target="standings-bundesliga">
+                                <i class="fas fa-shield-alt" style="color:#FFD700;"></i> Bundesliga
+                            </button>
+                        </div>
+
+                        <!-- ── TAB 1: PREMIER LEAGUE ── -->
+                        <div id="standings-epl" class="tab-pane active">
+                            <div class="table-responsive glass" style="padding:15px; border-radius:18px;">
+                                <table class="standings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Club</th>
+                                            <th>MP</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>PTS</th>
+                                            <th>Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">1</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" class="table-team-logo" alt="Man City">
+                                                    <span>Man City</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>21</td><td>5</td><td>2</td><td>68</td><td>22</td><td>+46</td><td><strong>68</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">2</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" class="table-team-logo" alt="Arsenal">
+                                                    <span>Arsenal</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>20</td><td>6</td><td>2</td><td>65</td><td>20</td><td>+45</td><td><strong>66</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">3</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png" class="table-team-logo" alt="Liverpool">
+                                                    <span>Liverpool</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>19</td><td>7</td><td>2</td><td>63</td><td>24</td><td>+39</td><td><strong>64</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">4</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Aston_Villa_logo.svg/1200px-Aston_Villa_logo.svg.png" class="table-team-logo" alt="Aston Villa">
+                                                    <span>Aston Villa</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>16</td><td>5</td><td>7</td><td>52</td><td>36</td><td>+16</td><td><strong>53</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-uel">5</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png" class="table-team-logo" alt="Tottenham">
+                                                    <span>Tottenham</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>15</td><td>5</td><td>8</td><td>55</td><td>42</td><td>+13</td><td><strong>50</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge l">L</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ecl">6</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" class="table-team-logo" alt="Man Utd">
+                                                    <span>Man Utd</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>14</td><td>4</td><td>10</td><td>44</td><td>39</td><td>+5</td><td><strong>46</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-mid">7</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" class="table-team-logo" alt="Chelsea">
+                                                    <span>Chelsea</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>13</td><td>6</td><td>9</td><td>48</td><td>43</td><td>+5</td><td><strong>45</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge l">L</span></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── TAB 2: CHAMPIONS LEAGUE ── -->
+                        <div id="standings-ucl" class="tab-pane">
+                            <div class="table-responsive glass" style="padding:15px; border-radius:18px;">
+                                <table class="standings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Club</th>
+                                            <th>MP</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>PTS</th>
+                                            <th>Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">1</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="table-team-logo" alt="Real Madrid">
+                                                    <span>Real Madrid</span>
+                                                </div>
+                                            </td>
+                                            <td>8</td><td>7</td><td>1</td><td>0</td><td>21</td><td>6</td><td>+15</td><td><strong>22</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">2</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" class="table-team-logo" alt="Man City">
+                                                    <span>Man City</span>
+                                                </div>
+                                            </td>
+                                            <td>8</td><td>6</td><td>2</td><td>0</td><td>20</td><td>7</td><td>+13</td><td><strong>20</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">3</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" class="table-team-logo" alt="Bayern">
+                                                    <span>Bayern Munich</span>
+                                                </div>
+                                            </td>
+                                            <td>8</td><td>6</td><td>1</td><td>1</td><td>19</td><td>8</td><td>+11</td><td><strong>19</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">4</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" class="table-team-logo" alt="Arsenal">
+                                                    <span>Arsenal</span>
+                                                </div>
+                                            </td>
+                                            <td>8</td><td>5</td><td>2</td><td>1</td><td>17</td><td>6</td><td>+11</td><td><strong>17</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── TAB 3: LA LIGA ── -->
+                        <div id="standings-laliga" class="tab-pane">
+                            <div class="table-responsive glass" style="padding:15px; border-radius:18px;">
+                                <table class="standings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Club</th>
+                                            <th>MP</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>PTS</th>
+                                            <th>Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">1</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" class="table-team-logo" alt="Barcelona">
+                                                    <span>Barcelona</span>
+                                                </div>
+                                            </td>
+                                            <td>27</td><td>21</td><td>4</td><td>2</td><td>72</td><td>23</td><td>+49</td><td><strong>67</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">2</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" class="table-team-logo" alt="Real Madrid">
+                                                    <span>Real Madrid</span>
+                                                </div>
+                                            </td>
+                                            <td>27</td><td>20</td><td>5</td><td>2</td><td>64</td><td>21</td><td>+43</td><td><strong>65</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">3</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png" class="table-team-logo" alt="Atletico">
+                                                    <span>Atlético Madrid</span>
+                                                </div>
+                                            </td>
+                                            <td>27</td><td>17</td><td>6</td><td>4</td><td>51</td><td>24</td><td>+27</td><td><strong>57</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── TAB 4: SERIE A ── -->
+                        <div id="standings-seriea" class="tab-pane">
+                            <div class="table-responsive glass" style="padding:15px; border-radius:18px;">
+                                <table class="standings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Club</th>
+                                            <th>MP</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>PTS</th>
+                                            <th>Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">1</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png" class="table-team-logo" alt="Inter">
+                                                    <span>Inter Milan</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>21</td><td>4</td><td>3</td><td>66</td><td>19</td><td>+47</td><td><strong>67</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">2</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1200px-Logo_of_AC_Milan.svg.png" class="table-team-logo" alt="AC Milan">
+                                                    <span>AC Milan</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>18</td><td>6</td><td>4</td><td>56</td><td>29</td><td>+27</td><td><strong>60</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">3</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Juventus_FC_2017_logo.svg/1200px-Juventus_FC_2017_logo.svg.png" class="table-team-logo" alt="Juventus">
+                                                    <span>Juventus</span>
+                                                </div>
+                                            </td>
+                                            <td>28</td><td>17</td><td>7</td><td>4</td><td>49</td><td>22</td><td>+27</td><td><strong>58</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── TAB 5: BUNDESLIGA ── -->
+                        <div id="standings-bundesliga" class="tab-pane">
+                            <div class="table-responsive glass" style="padding:15px; border-radius:18px;">
+                                <table class="standings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Club</th>
+                                            <th>MP</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>PTS</th>
+                                            <th>Form</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">1</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" class="table-team-logo" alt="Bayern">
+                                                    <span>Bayern Munich</span>
+                                                </div>
+                                            </td>
+                                            <td>26</td><td>20</td><td>4</td><td>2</td><td>74</td><td>24</td><td>+50</td><td><strong>64</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">2</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1200px-Bayer_04_Leverkusen_logo.svg.png" class="table-team-logo" alt="Leverkusen">
+                                                    <span>Bayer Leverkusen</span>
+                                                </div>
+                                            </td>
+                                            <td>26</td><td>18</td><td>6</td><td>2</td><td>61</td><td>26</td><td>+35</td><td><strong>60</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge w">W</span><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge d">D</span></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="pos-rank pos-ucl">3</span></td>
+                                            <td>
+                                                <div class="table-team">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png" class="table-team-logo" alt="Dortmund">
+                                                    <span>Borussia Dortmund</span>
+                                                </div>
+                                            </td>
+                                            <td>26</td><td>16</td><td>5</td><td>5</td><td>54</td><td>31</td><td>+23</td><td><strong>53</strong></td>
+                                            <td><div class="form-badges-wrap"><span class="form-badge d">D</span><span class="form-badge w">W</span><span class="form-badge w">W</span><span class="form-badge l">L</span><span class="form-badge w">W</span></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar Area -->
+                    <div>
+                        <!-- Live Highlight Card -->
+                        <h3 style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+                            <span style="width:10px; height:10px; background:var(--primary); border-radius:50%; box-shadow:var(--neon-glow); animation:blink 1.5s infinite;"></span>
+                            Live Now &bull; UCL
+                        </h3>
+                        
+                        <div class="glass" style="border-radius:16px; padding:22px; margin-bottom:30px; border-left: 4px solid var(--primary);">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                                <span style="font-size:0.82rem; color:var(--secondary-text); text-transform:uppercase; font-weight:700;"><i class="fas fa-trophy" style="color:var(--accent-gold)"></i> Champions League</span>
+                                <span style="color:var(--primary); font-weight:800; background:rgba(0,255,179,0.15); padding:3px 10px; border-radius:6px; font-size:0.85rem;">78' LIVE</span>
+                            </div>
+                            
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div style="display:flex; align-items:center; gap:10px; width:38%;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" style="width:38px; height:38px; object-fit:contain;" alt="RMA">
+                                    <h3 style="margin:0; font-size:1.1rem;">RMA</h3>
+                                </div>
+                                <div style="font-size:2.2rem; font-weight:900; font-family:'Montserrat';">
+                                    <span style="color:var(--primary);">2</span> - <span>1</span>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:10px; width:38%; justify-content:flex-end;">
+                                    <h3 style="margin:0; font-size:1.1rem;">MCI</h3>
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" style="width:38px; height:38px; object-fit:contain;" alt="MCI">
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top:16px; border-top:1px solid var(--glass-border); padding-top:12px; display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.8rem; color:var(--secondary-text);">Bellingham 78' winner</span>
+                                <a href="detail1.html" class="match-btn-link" style="font-size:0.82rem;">Match Center <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- El Clasico Countdown -->
+                        <h3 style="margin-bottom:16px;"><i class="fas fa-stopwatch" style="color:var(--accent-gold);"></i> Next Super Derby</h3>
+                        <div class="glass" style="border-radius:16px; padding:22px; text-align:center; background:linear-gradient(135deg, rgba(15,23,42,0.8), rgba(0,212,255,0.1));">
+                            <h4 style="color:var(--secondary-text); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:15px;">El Clásico &bull; La Liga</h4>
+                            <div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-bottom:15px;">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" style="width:50px; height:50px; object-fit:contain;" alt="Real Madrid">
+                                <span style="font-size:1.4rem; font-weight:800; color:var(--secondary-text);">VS</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" style="width:50px; height:50px; object-fit:contain;" alt="Barcelona">
+                            </div>
+                            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px;">
+                                <div style="background:rgba(0,0,0,0.5); padding:8px 4px; border-radius:8px;">
+                                    <div style="font-size:1.3rem; font-weight:800; color:var(--primary);">02</div>
+                                    <div style="font-size:0.65rem; text-transform:uppercase; color:var(--secondary-text);">Days</div>
+                                </div>
+                                <div style="background:rgba(0,0,0,0.5); padding:8px 4px; border-radius:8px;">
+                                    <div style="font-size:1.3rem; font-weight:800; color:var(--primary);">14</div>
+                                    <div style="font-size:0.65rem; text-transform:uppercase; color:var(--secondary-text);">Hrs</div>
+                                </div>
+                                <div style="background:rgba(0,0,0,0.5); padding:8px 4px; border-radius:8px;">
+                                    <div style="font-size:1.3rem; font-weight:800; color:var(--primary);">30</div>
+                                    <div style="font-size:0.65rem; text-transform:uppercase; color:var(--secondary-text);">Min</div>
+                                </div>
+                                <div style="background:rgba(0,0,0,0.5); padding:8px 4px; border-radius:8px;">
+                                    <div style="font-size:1.3rem; font-weight:800; color:var(--primary);">45</div>
+                                    <div style="font-size:0.65rem; text-transform:uppercase; color:var(--secondary-text);">Sec</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Golden Boot Leaderboard -->
+                        <h3 style="margin-top:35px; margin-bottom:16px;"><i class="fas fa-crown" style="color:var(--accent-gold);"></i> Golden Boot Race</h3>
+                        <div class="glass" style="border-radius:16px; padding:18px;">
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);" alt="Haaland">
+                                    <div>
+                                        <div style="font-weight:700;">E. Haaland</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text);">Man City &bull; Premier League</div>
+                                    </div>
+                                </div>
+                                <div style="font-weight:900; font-size:1.4rem; color:var(--primary);">36 <span style="font-size:0.75rem; color:var(--secondary-text);">G</span></div>
+                            </div>
+
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:1px solid var(--glass-border);" alt="Kane">
+                                    <div>
+                                        <div style="font-weight:700;">H. Kane</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text);">Bayern &bull; Bundesliga</div>
+                                    </div>
+                                </div>
+                                <div style="font-weight:900; font-size:1.4rem; color:var(--white);">30 <span style="font-size:0.75rem; color:var(--secondary-text);">G</span></div>
+                            </div>
+
+                            <div style="display:flex; align-items:center; justify-content:space-between;">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <img src="https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:1px solid var(--glass-border);" alt="Lewandowski">
+                                    <div>
+                                        <div style="font-weight:700;">R. Lewandowski</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text);">Barcelona &bull; La Liga</div>
+                                    </div>
+                                </div>
+                                <div style="font-weight:900; font-size:1.4rem; color:var(--white);">26 <span style="font-size:0.75rem; color:var(--secondary-text);">G</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

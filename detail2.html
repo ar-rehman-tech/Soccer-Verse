@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Match Center - Arsenal vs Manchester United. Premier League scoreline, tactical pitch lineups, momentum telemetry, and highlights.">
+    <title>SoccerVerse - Arsenal vs Manchester United (Premier League Match Center)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top:0;">
+        <!-- ── Match Center Hero Banner ── -->
+        <div class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="container detail-content">
+                <div class="breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <a href="games.html">Matches</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <span style="color:var(--secondary);"><i class="fas fa-shield-alt" style="color:#00D4FF;"></i> Premier League</span>
+                </div>
+
+                <div class="match-center-banner">
+                    <!-- Home Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png"
+                            alt="Arsenal" class="detail-team-logo">
+                        <h2 class="detail-team-name">Arsenal</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">2nd in Premier League</span>
+                    </div>
+
+                    <!-- Center Scoreboard -->
+                    <div class="detail-score-box">
+                        <div class="detail-score-status" style="background:rgba(255,255,255,0.08); color:var(--secondary-text); border:1px solid var(--glass-border);">
+                            Full Time &bull; Matchday 4
+                        </div>
+                        <div class="detail-score-digits">
+                            3 - 1
+                        </div>
+                        <div class="detail-match-info">
+                            <span><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Emirates Stadium</span>
+                            <span><i class="fas fa-users" style="color:var(--secondary);"></i> 60,192 Attendance</span>
+                            <span><i class="fas fa-whistle" style="color:var(--accent-gold);"></i> Ref: A. Taylor</span>
+                        </div>
+                        <div class="detail-actions-bar">
+                            <button type="button" class="btn btn-primary btn-sm btn-highlights"
+                                data-title="Arsenal 3 - 1 Manchester United (Full Match Highlights)"
+                                data-desc="Sensational 96th minute Declan Rice winner followed by Gabriel Jesus stoppage time seal thrilling Emirates victory."
+                                data-poster="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                <i class="fas fa-play"></i> Watch 4K Highlights
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="showToast('Match report saved to your bookmarks! 📌', 'info')">
+                                <i class="fas fa-bookmark"></i> Save Recap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Away Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png"
+                            alt="Manchester United" class="detail-team-logo">
+                        <h2 class="detail-team-name">Man Utd</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">6th in Premier League</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Interactive Content Section ── -->
+        <section class="section">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="detail-nav-tabs">
+                    <button class="detail-nav-tab active" data-tab-target="tab-overview">
+                        <i class="fas fa-stream"></i> Match Overview
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-lineups">
+                        <i class="fas fa-futbol"></i> Tactical Lineups
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-stats">
+                        <i class="fas fa-chart-bar"></i> Full Match Telemetry
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-h2h">
+                        <i class="fas fa-history"></i> Head-to-Head
+                    </button>
+                </div>
+
+                <!-- ── TAB 1: OVERVIEW ── -->
+                <div id="tab-overview" class="tab-pane active">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="overview-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-clock" style="color:var(--primary);"></i> Match Timeline
+                            </h3>
+                            <div class="timeline-list">
+                                <div class="timeline-item">
+                                    <div class="timeline-min">90+11'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Arsenal 3 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Gabriel Jesus sent Dalot sliding and coolly slotted past Onana (Assist: Fabio Vieira)</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">90+6'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Arsenal 2 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Declan Rice chest controls and fires through the near post off Evans' deflection!</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">88'</div>
+                                    <div class="timeline-icon sub"><i class="fas fa-video"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--accent-red);">VAR Disallowed Goal &bull; Man Utd</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Alejandro Garnacho deemed marginally offside by millimeter margin</div>
+                                    </div>
+                                    <span class="form-badge l">VAR</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">28'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Arsenal 1 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Martin Ødegaard strikes immediately from the edge of the box (Assist: Martinelli)</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">27'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Man Utd 0 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Marcus Rashford cuts inside from the left wing and lashes into far post (Assist: Eriksen)</div>
+                                    </div>
+                                    <span class="form-badge w" style="background:var(--secondary);">G</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:30px; padding:25px; border-radius:16px;">
+                                <h4 style="color:var(--primary); margin-bottom:12px;"><i class="fas fa-newspaper"></i> Post-Match Analysis</h4>
+                                <p style="color:var(--secondary-text); font-size:0.95rem; line-height:1.7; margin-bottom:0;">
+                                    A breathless encounter that saw Arsenal push their tactical territorial dominance with 55% possession and 12 corners. Declan Rice delivered a masterclass in midfield, culminating in his dramatic 96th-minute strike to send the Emirates into delirium.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- MOTM & Summary -->
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-star" style="color:var(--accent-gold);"></i> Player of the Match
+                            </h3>
+                            <div class="motm-card">
+                                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Declan Rice" class="motm-avatar">
+                                <div>
+                                    <span style="color:var(--accent-gold); font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">Rating 9.1 / 10</span>
+                                    <h4 style="margin:4px 0 2px; font-size:1.2rem;">Declan Rice</h4>
+                                    <div style="color:var(--secondary-text); font-size:0.82rem;">Arsenal &bull; Central Midfielder</div>
+                                    <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                                        <span class="badge-count" style="background:rgba(0,255,179,0.15); color:var(--primary);">1 Goal (96')</span>
+                                        <span class="badge-count" style="background:rgba(0,212,255,0.15); color:var(--secondary);">4 Tackles</span>
+                                        <span class="badge-count" style="background:rgba(255,255,255,0.08);">94% Pass</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:25px; padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:15px; font-size:1rem;">Match Supremacy</h4>
+                                <div class="stat-comp-row">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">Arsenal 55%</span>
+                                        <span class="stat-comp-label">Possession</span>
+                                        <span style="color:var(--secondary);">Man Utd 45%</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 55%;"></div>
+                                        <div class="stat-bar-away" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="stat-comp-row" style="margin-bottom:0;">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">2.42 xG</span>
+                                        <span class="stat-comp-label">Expected Goals</span>
+                                        <span style="color:var(--secondary);">1.15 xG</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 68%;"></div>
+                                        <div class="stat-bar-away" style="width: 32%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 2: LINEUPS ── -->
+                <div id="tab-lineups" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="lineup-grid">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--primary);"></span>
+                                    <strong style="color:var(--white);">Arsenal (4-3-3)</strong>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <strong style="color:var(--secondary);">Man Utd (4-2-3-1)</strong>
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--secondary);"></span>
+                                </div>
+                            </div>
+
+                            <div class="pitch-container">
+                                <div class="pitch-center-line"></div>
+                                <div class="pitch-center-circle"></div>
+
+                                <!-- Arsenal -->
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">1</div><span class="pitch-player-name">Ramsdale (GK)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">4</div><span class="pitch-player-name">White</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">2</div><span class="pitch-player-name">Saliba</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">6</div><span class="pitch-player-name">Gabriel</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">35</div><span class="pitch-player-name">Zinchenko</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">8</div><span class="pitch-player-name">Ødegaard (C)</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">41</div><span class="pitch-player-name" style="border-color:var(--accent-gold); color:var(--accent-gold);">Rice</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">29</div><span class="pitch-player-name">Havertz</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">7</div><span class="pitch-player-name">Saka</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">14</div><span class="pitch-player-name">Nketiah</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">11</div><span class="pitch-player-name">Martinelli</span></div>
+                                </div>
+
+                                <!-- Man Utd -->
+                                <div class="pitch-lineup-row" style="margin-top:20px;">
+                                    <div class="pitch-player away"><div class="pitch-player-num">9</div><span class="pitch-player-name">Martial (ST)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">10</div><span class="pitch-player-name">Rashford</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">8</div><span class="pitch-player-name">Bruno (C)</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">21</div><span class="pitch-player-name">Antony</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">18</div><span class="pitch-player-name">Casemiro</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">14</div><span class="pitch-player-name">Eriksen</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">29</div><span class="pitch-player-name">Wan-Bissaka</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">2</div><span class="pitch-player-name">Lindelöf</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">6</div><span class="pitch-player-name">Martínez</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">20</div><span class="pitch-player-name">Dalot</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">24</div><span class="pitch-player-name">Onana (GK)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bench -->
+                        <div>
+                            <div class="glass" style="padding:22px; border-radius:16px; margin-bottom:24px;">
+                                <h4 style="margin-bottom:12px; color:var(--primary);"><i class="fas fa-user-tie"></i> Managers</h4>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0; border-bottom:1px solid var(--glass-border);">
+                                    <span>Mikel Arteta</span>
+                                    <span style="color:var(--secondary-text);">Arsenal</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0;">
+                                    <span>Erik ten Hag</span>
+                                    <span style="color:var(--secondary-text);">Man Utd</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:12px;"><i class="fas fa-users-cog"></i> Substitutes Bench</h4>
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--primary); margin-top:8px;">Arsenal</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">9</span> G. Jesus</div>
+                                    <div class="bench-player"><span class="bench-num">21</span> F. Vieira</div>
+                                    <div class="bench-player"><span class="bench-num">19</span> Trossard</div>
+                                    <div class="bench-player"><span class="bench-num">22</span> Raya (GK)</div>
+                                </div>
+
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--secondary); margin-top:16px;">Manchester United</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">11</span> Højlund</div>
+                                    <div class="bench-player"><span class="bench-num">17</span> Garnacho</div>
+                                    <div class="bench-player"><span class="bench-num">35</span> J. Evans</div>
+                                    <div class="bench-player"><span class="bench-num">1</span> Bayındır (GK)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 3: STATS ── -->
+                <div id="tab-stats" class="tab-pane">
+                    <div class="glass" style="padding:35px; border-radius:20px; max-width:900px; margin:0 auto;">
+                        <h3 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">Match Telemetry Comparison</h3>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">55%</span>
+                                <span class="stat-comp-label">Ball Possession</span>
+                                <span style="color:var(--secondary);">45%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 55%;"></div>
+                                <div class="stat-bar-away" style="width: 45%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">2.42</span>
+                                <span class="stat-comp-label">Expected Goals (xG)</span>
+                                <span style="color:var(--secondary);">1.15</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 68%;"></div>
+                                <div class="stat-bar-away" style="width: 32%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">17</span>
+                                <span class="stat-comp-label">Total Shots</span>
+                                <span style="color:var(--secondary);">10</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 63%;"></div>
+                                <div class="stat-bar-away" style="width: 37%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">7</span>
+                                <span class="stat-comp-label">Shots on Target</span>
+                                <span style="color:var(--secondary);">4</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 64%;"></div>
+                                <div class="stat-bar-away" style="width: 36%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">12</span>
+                                <span class="stat-comp-label">Corner Kicks</span>
+                                <span style="color:var(--secondary);">3</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 80%;"></div>
+                                <div class="stat-bar-away" style="width: 20%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">88%</span>
+                                <span class="stat-comp-label">Pass Accuracy</span>
+                                <span style="color:var(--secondary);">82%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 52%;"></div>
+                                <div class="stat-bar-away" style="width: 48%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 4: H2H ── -->
+                <div id="tab-h2h" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:35px;" class="h2h-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-history" style="color:var(--primary);"></i> Recent Premier League Encounters</h3>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Man Utd 0 - 1 Arsenal</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Old Trafford (Trossard 20')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Arsenal 3 - 1 Man Utd</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Emirates Stadium (Rice 96', Jesus 90+11')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Arsenal 3 - 2 Man Utd</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Emirates Stadium (Nketiah 90')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Man Utd 3 - 1 Arsenal</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Old Trafford (Rashford brace)</div>
+                                </div>
+                                <span class="form-badge l">L</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-trophy" style="color:var(--accent-gold);"></i> Head-to-Head Summary</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-around; text-align:center; margin-bottom:20px;">
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--primary);">88</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Arsenal Wins</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary-text);">50</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Draws</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary);">101</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Man Utd Wins</div>
+                                    </div>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--secondary-text); line-height:1.6; margin-bottom:0;">
+                                    Arsenal have won 4 of their last 5 home league meetings against Manchester United at the Emirates Stadium.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoccerVerse - User Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="feedback">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper">
+        <div class="page-header" style="background: url('https://images.unsplash.com/photo-1518091043644-c1d44570a2c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover; position:relative;">
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,7,13,0.8) 0%, rgba(5,7,13,1) 100%);"></div>
+            <div class="container" style="position:relative; z-index:1;">
+                <h1>Your Feedback Matters</h1>
+                <p>Help us improve your premium football experience. Tell us what you love and what we can do better.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="glass feedback-card" style="max-width:800px; margin:0 auto; padding:50px; border-radius:24px;">
+                    
+                    <form id="feedback-form">
+                        <div style="text-align:center; margin-bottom:40px;">
+                            <h3 style="margin-bottom:15px;">How would you rate your experience?</h3>
+                            <div class="star-rating-container" style="display:flex; justify-content:center; gap:20px; font-size:2.5rem; color:var(--glass-border); cursor:pointer;">
+                                <i class="fas fa-star rating-star hover-star"></i>
+                                <i class="fas fa-star rating-star hover-star"></i>
+                                <i class="fas fa-star rating-star hover-star"></i>
+                                <i class="fas fa-star rating-star hover-star"></i>
+                                <i class="fas fa-star rating-star hover-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2col" style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-control" placeholder=" " required>
+                                <label for="name" class="floating">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control" placeholder=" " required>
+                                <label for="email" class="floating">Email Address</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="position:relative;">
+                            <select class="form-control" required style="appearance:none; padding:15px;">
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="bug">Report a Bug</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="content">Content Accuracy</option>
+                                <option value="general">General Feedback</option>
+                            </select>
+                            <i class="fas fa-chevron-down" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); pointer-events:none; color:var(--secondary-text);"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="comments" class="form-control" placeholder=" " rows="6" required style="resize:none; padding-top:20px;"></textarea>
+                            <label for="comments" class="floating">Detailed Comments</label>
+                        </div>
+
+                        <div style="display:flex; justify-content:center;">
+                            <button type="submit" class="btn btn-primary" style="padding:15px 40px; font-size:1.1rem; border-radius:12px;">Submit Feedback</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            handleForm('feedback-form', 'Thank you! Your feedback has been recorded.');
+
+            const stars = document.querySelectorAll('.rating-star');
+            let currentRating = 0;
+
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => {
+                    for(let i=0; i<=index; i++) {
+                        stars[i].style.color = 'var(--accent-gold)';
+                        stars[i].style.textShadow = '0 0 15px rgba(255,215,0,0.5)';
+                    }
+                    for(let i=index+1; i<stars.length; i++) {
+                        if (i >= currentRating) {
+                            stars[i].style.color = 'var(--glass-border)';
+                            stars[i].style.textShadow = 'none';
+                        }
+                    }
+                });
+
+                star.addEventListener('mouseout', () => {
+                    stars.forEach((s, i) => {
+                        if (i < currentRating) {
+                            s.style.color = 'var(--accent-gold)';
+                            s.style.textShadow = '0 0 15px rgba(255,215,0,0.5)';
+                        } else {
+                            s.style.color = 'var(--glass-border)';
+                            s.style.textShadow = 'none';
+                        }
+                    });
+                });
+
+                star.addEventListener('click', () => {
+                    currentRating = index + 1;
+                    stars.forEach((s, i) => {
+                        if (i < currentRating) {
+                            s.style.color = 'var(--accent-gold)';
+                            s.style.textShadow = '0 0 15px rgba(255,215,0,0.5)';
+                            // Adding animation
+                            s.style.transform = 'scale(1.2)';
+                            setTimeout(() => s.style.transform = 'scale(1)', 200);
+                        } else {
+                            s.style.color = 'var(--glass-border)';
+                            s.style.textShadow = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

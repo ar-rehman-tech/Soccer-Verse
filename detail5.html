@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Match Center - Bayern Munich vs Borussia Dortmund (Der Klassiker). Bundesliga score, tactical pitch lineups, momentum telemetry, and highlights.">
+    <title>SoccerVerse - Bayern Munich vs Borussia Dortmund (Der Klassiker Match Center)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top:0;">
+        <!-- ── Match Center Hero Banner ── -->
+        <div class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="container detail-content">
+                <div class="breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <a href="games.html">Matches</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <span style="color:var(--accent-gold);"><i class="fas fa-shield-alt" style="color:#FFD700;"></i> Bundesliga</span>
+                </div>
+
+                <div class="match-center-banner">
+                    <!-- Home Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+                            alt="Bayern Munich" class="detail-team-logo">
+                        <h2 class="detail-team-name">Bayern</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">1st in Bundesliga</span>
+                    </div>
+
+                    <!-- Center Scoreboard -->
+                    <div class="detail-score-box">
+                        <div class="detail-score-status" style="background:rgba(255,255,255,0.08); color:var(--secondary-text); border:1px solid var(--glass-border);">
+                            Full Time &bull; Der Klassiker
+                        </div>
+                        <div class="detail-score-digits">
+                            2 - 2
+                        </div>
+                        <div class="detail-match-info">
+                            <span><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Allianz Arena</span>
+                            <span><i class="fas fa-users" style="color:var(--secondary);"></i> 75,024 Attendance</span>
+                            <span><i class="fas fa-whistle" style="color:var(--accent-gold);"></i> Ref: F. Zwayer</span>
+                        </div>
+                        <div class="detail-actions-bar">
+                            <button type="button" class="btn btn-primary btn-sm btn-highlights"
+                                data-title="Bayern Munich 2 - 2 Borussia Dortmund (Der Klassiker Highlights)"
+                                data-desc="Sensational 4-goal thriller as Musiala dazzles and Guirassy nets an 89th minute equalizer at the Allianz Arena."
+                                data-poster="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                <i class="fas fa-play"></i> Watch 4K Highlights
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="showToast('Match report saved to your bookmarks! 📌', 'info')">
+                                <i class="fas fa-bookmark"></i> Save Recap
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Away Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png"
+                            alt="Borussia Dortmund" class="detail-team-logo">
+                        <h2 class="detail-team-name">Dortmund</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">3rd in Bundesliga</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Interactive Content Section ── -->
+        <section class="section">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="detail-nav-tabs">
+                    <button class="detail-nav-tab active" data-tab-target="tab-overview">
+                        <i class="fas fa-stream"></i> Match Overview
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-lineups">
+                        <i class="fas fa-futbol"></i> Tactical Lineups
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-stats">
+                        <i class="fas fa-chart-bar"></i> Full Match Telemetry
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-h2h">
+                        <i class="fas fa-history"></i> Klassiker History
+                    </button>
+                </div>
+
+                <!-- ── TAB 1: OVERVIEW ── -->
+                <div id="tab-overview" class="tab-pane active">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="overview-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-clock" style="color:var(--primary);"></i> Match Timeline
+                            </h3>
+                            <div class="timeline-list">
+                                <div class="timeline-item">
+                                    <div class="timeline-min">89'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Dortmund 2 - 2</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Serhou Guirassy smashes into the roof of the net (Assist: Marcel Sabitzer)</div>
+                                    </div>
+                                    <span class="form-badge w" style="background:var(--secondary);">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">62'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Bayern 2 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Jamal Musiala weaves through three defenders and slots home neatly</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">34'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Dortmund 1 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Julian Brandt unleashes a curling 20-yard effort past Neuer (Assist: K. Adeyemi)</div>
+                                    </div>
+                                    <span class="form-badge w" style="background:var(--secondary);">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">18'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Bayern 1 - 0</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Harry Kane powers home a trademark near-post header (Assist: Michael Olise)</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:30px; padding:25px; border-radius:16px;">
+                                <h4 style="color:var(--primary); margin-bottom:12px;"><i class="fas fa-newspaper"></i> Post-Match Klassiker Review</h4>
+                                <p style="color:var(--secondary-text); font-size:0.95rem; line-height:1.7; margin-bottom:0;">
+                                    A breathless edition of Der Klassiker in Munich. Bayern generated 2.65 xG from 19 shots with Jamal Musiala creating havoc, but Nuri Şahin's side showed supreme character through Guirassy's late equalizer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-star" style="color:var(--accent-gold);"></i> Player of the Match
+                            </h3>
+                            <div class="motm-card">
+                                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Jamal Musiala" class="motm-avatar">
+                                <div>
+                                    <span style="color:var(--accent-gold); font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">Rating 8.9 / 10</span>
+                                    <h4 style="margin:4px 0 2px; font-size:1.2rem;">Jamal Musiala</h4>
+                                    <div style="color:var(--secondary-text); font-size:0.82rem;">Bayern Munich &bull; Playmaker</div>
+                                    <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                                        <span class="badge-count" style="background:rgba(0,255,179,0.15); color:var(--primary);">1 Solo Goal</span>
+                                        <span class="badge-count" style="background:rgba(0,212,255,0.15); color:var(--secondary);">5 Take-ons</span>
+                                        <span class="badge-count" style="background:rgba(255,255,255,0.08);">91% Pass</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:25px; padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:15px; font-size:1rem;">Match Dominance</h4>
+                                <div class="stat-comp-row">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">Bayern 62%</span>
+                                        <span class="stat-comp-label">Possession</span>
+                                        <span style="color:var(--secondary);">Dortmund 38%</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 62%;"></div>
+                                        <div class="stat-bar-away" style="width: 38%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="stat-comp-row" style="margin-bottom:0;">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">2.65 xG</span>
+                                        <span class="stat-comp-label">Expected Goals</span>
+                                        <span style="color:var(--secondary);">1.92 xG</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 58%;"></div>
+                                        <div class="stat-bar-away" style="width: 42%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 2: LINEUPS ── -->
+                <div id="tab-lineups" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="lineup-grid">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--primary);"></span>
+                                    <strong style="color:var(--white);">Bayern Munich (4-2-3-1)</strong>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <strong style="color:var(--secondary);">Borussia Dortmund (4-2-3-1)</strong>
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--secondary);"></span>
+                                </div>
+                            </div>
+
+                            <div class="pitch-container">
+                                <div class="pitch-center-line"></div>
+                                <div class="pitch-center-circle"></div>
+
+                                <!-- Bayern Munich (Top) -->
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">1</div><span class="pitch-player-name">Neuer (GK/C)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">6</div><span class="pitch-player-name">Kimmich</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">2</div><span class="pitch-player-name">Upamecano</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">3</div><span class="pitch-player-name">Kim Min-jae</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">19</div><span class="pitch-player-name">Davies</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">45</div><span class="pitch-player-name">Pavlović</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">16</div><span class="pitch-player-name">Palhinha</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">17</div><span class="pitch-player-name">Olise</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">42</div><span class="pitch-player-name" style="border-color:var(--accent-gold); color:var(--accent-gold);">Musiala</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">7</div><span class="pitch-player-name">Gnabry</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">9</div><span class="pitch-player-name">Kane (ST)</span></div>
+                                </div>
+
+                                <!-- Dortmund (Bottom) -->
+                                <div class="pitch-lineup-row" style="margin-top:20px;">
+                                    <div class="pitch-player away"><div class="pitch-player-num">9</div><span class="pitch-player-name">Guirassy (ST)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">27</div><span class="pitch-player-name">Adeyemi</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">10</div><span class="pitch-player-name">Brandt</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">21</div><span class="pitch-player-name">Malen</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">23</div><span class="pitch-player-name">Can (C)</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">20</div><span class="pitch-player-name">Sabitzer</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">26</div><span class="pitch-player-name">Ryerson</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">3</div><span class="pitch-player-name">Anton</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">4</div><span class="pitch-player-name">Schlotterbeck</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">5</div><span class="pitch-player-name">Bensebaini</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">1</div><span class="pitch-player-name">Kobel (GK)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bench -->
+                        <div>
+                            <div class="glass" style="padding:22px; border-radius:16px; margin-bottom:24px;">
+                                <h4 style="margin-bottom:12px; color:var(--primary);"><i class="fas fa-user-tie"></i> Managers</h4>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0; border-bottom:1px solid var(--glass-border);">
+                                    <span>Vincent Kompany</span>
+                                    <span style="color:var(--secondary-text);">Bayern Munich</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0;">
+                                    <span>Nuri Şahin</span>
+                                    <span style="color:var(--secondary-text);">Borussia Dortmund</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:12px;"><i class="fas fa-users-cog"></i> Bench Players</h4>
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--primary); margin-top:8px;">Bayern Munich</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">10</span> Sané</div>
+                                    <div class="bench-player"><span class="bench-num">11</span> Coman</div>
+                                    <div class="bench-player"><span class="bench-num">25</span> Müller</div>
+                                    <div class="bench-player"><span class="bench-num">26</span> Ulreich (GK)</div>
+                                </div>
+
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--secondary); margin-top:16px;">Borussia Dortmund</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">14</span> Beier</div>
+                                    <div class="bench-player"><span class="bench-num">8</span> Nmecha</div>
+                                    <div class="bench-player"><span class="bench-num">43</span> Gittens</div>
+                                    <div class="bench-player"><span class="bench-num">33</span> Meyer (GK)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 3: STATS ── -->
+                <div id="tab-stats" class="tab-pane">
+                    <div class="glass" style="padding:35px; border-radius:20px; max-width:900px; margin:0 auto;">
+                        <h3 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">Match Telemetry Comparison</h3>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">62%</span>
+                                <span class="stat-comp-label">Ball Possession</span>
+                                <span style="color:var(--secondary);">38%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 62%;"></div>
+                                <div class="stat-bar-away" style="width: 38%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">2.65</span>
+                                <span class="stat-comp-label">Expected Goals (xG)</span>
+                                <span style="color:var(--secondary);">1.92</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 58%;"></div>
+                                <div class="stat-bar-away" style="width: 42%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">19</span>
+                                <span class="stat-comp-label">Total Shots</span>
+                                <span style="color:var(--secondary);">11</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 63%;"></div>
+                                <div class="stat-bar-away" style="width: 37%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">8</span>
+                                <span class="stat-comp-label">Shots on Target</span>
+                                <span style="color:var(--secondary);">6</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 57%;"></div>
+                                <div class="stat-bar-away" style="width: 43%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">8</span>
+                                <span class="stat-comp-label">Corner Kicks</span>
+                                <span style="color:var(--secondary);">4</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 66%;"></div>
+                                <div class="stat-bar-away" style="width: 34%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 4: H2H ── -->
+                <div id="tab-h2h" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:35px;" class="h2h-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-history" style="color:var(--primary);"></i> Recent Klassikers</h3>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Bayern Munich 2 - 2 Dortmund</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Allianz Arena (Musiala, Guirassy)</div>
+                                </div>
+                                <span class="form-badge d">D</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Bayern Munich 0 - 2 Dortmund</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Allianz Arena (Adeyemi, Ryerson)</div>
+                                </div>
+                                <span class="form-badge l">L</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Dortmund 0 - 4 Bayern Munich</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Signal Iduna Park (Kane hat-trick)</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Bayern Munich 4 - 2 Dortmund</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Allianz Arena (Müller brace)</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-trophy" style="color:var(--accent-gold);"></i> Head-to-Head Statistics</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-around; text-align:center; margin-bottom:20px;">
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--primary);">67</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Bayern Wins</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary-text);">36</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Draws</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary);">34</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">BVB Wins</div>
+                                    </div>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--secondary-text); line-height:1.6; margin-bottom:0;">
+                                    Der Klassiker averages 3.8 goals per encounter over the last 15 Bundesliga meetings, making it one of the most prolific fixtures in European football.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

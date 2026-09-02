@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoccerVerse Player Database - Complete FUT Ultimate Team player cards, in-depth stats, pace, shooting, passing telemetry, and player profiles.">
+    <title>SoccerVerse - Ultimate Player Database & FUT Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="players">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper">
+        <!-- Header Banner with Filter Controls -->
+        <div class="page-header" style="background: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover; position:relative;">
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,7,13,0.75) 0%, rgba(5,7,13,0.98) 100%);"></div>
+            <div class="container" style="position:relative; z-index:1;">
+                <span class="section-subtitle">FUT Analytics Engine</span>
+                <h1>Ultimate Player Database</h1>
+                <p>Discover top-rated footballers, track real-world tactical attributes, and explore detailed player profiles.</p>
+                
+                <div class="glass players-filter-bar" style="max-width:900px; margin: 35px auto 0; padding:22px; border-radius:16px; display:flex; gap:14px; flex-wrap:wrap; justify-content:center; align-items:center;">
+                    <!-- Search Input -->
+                    <div style="flex:1; min-width:220px; position:relative;">
+                        <i class="fas fa-search" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--secondary-text);"></i>
+                        <input type="text" id="player-search-input" class="form-control" placeholder="Search by name, club, or nationality..." style="margin-bottom:0; padding-left:42px; background:rgba(5,7,13,0.7);">
+                    </div>
+
+                    <!-- Position Selector -->
+                    <select id="position-filter" class="form-control" style="width:auto; min-width:160px; margin-bottom:0; background:rgba(5,7,13,0.7); cursor:pointer;">
+                        <option value="all">All Positions</option>
+                        <option value="FW">Forward (FW / ST / LW / RW)</option>
+                        <option value="MF">Midfielder (MF / CAM / CM / CDM)</option>
+                        <option value="DF">Defender (DF / CB / LB / RB)</option>
+                        <option value="GK">Goalkeeper (GK)</option>
+                    </select>
+
+                    <!-- Sorting Selector -->
+                    <select id="sort-filter" class="form-control" style="width:auto; min-width:160px; margin-bottom:0; background:rgba(5,7,13,0.7); cursor:pointer;">
+                        <option value="rating-desc">Rating (High to Low)</option>
+                        <option value="pac-desc">Pace (Fastest)</option>
+                        <option value="sho-desc">Shooting (Best Finishers)</option>
+                        <option value="pas-desc">Passing (Playmakers)</option>
+                        <option value="dri-desc">Dribbling (Skillers)</option>
+                        <option value="def-desc">Defending (Tacklers)</option>
+                        <option value="phy-desc">Physical (Strongest)</option>
+                    </select>
+
+                    <button class="btn btn-outline" id="clear-filters-btn" style="padding:14px 20px;" title="Reset filters">
+                        <i class="fas fa-redo-alt"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <!-- Live Count Summary -->
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; flex-wrap:wrap; gap:12px;">
+                    <div style="font-size:0.95rem; color:var(--secondary-text);">
+                        Showing <span id="visible-player-count" style="color:var(--primary); font-weight:800;">16</span> world-class players
+                    </div>
+                    <div style="font-size:0.85rem; color:var(--secondary-text);">
+                        <i class="fas fa-info-circle" style="color:var(--primary);"></i> Click on any card to view in-depth telemetry & profile
+                    </div>
+                </div>
+
+                <!-- Players Grid -->
+                <div class="players-grid" id="players-container">
+                    <!-- Javascript will render player cards dynamically -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-players-found" class="glass" style="display:none; text-align:center; padding:70px 20px; border-radius:20px; margin:40px auto; max-width:550px;">
+                    <i class="fas fa-user-slash" style="font-size:3.5rem; color:var(--secondary-text); opacity:0.4; margin-bottom:20px;"></i>
+                    <h3 style="margin-bottom:10px;">No players found matching your search</h3>
+                    <p style="color:var(--secondary-text); margin-bottom:24px;">Try searching for a different name, adjusting the position filter, or resetting your query.</p>
+                    <button class="btn btn-primary btn-sm" id="empty-reset-btn">Reset All Filters</button>
+                </div>
+
+                <!-- Load More Prospects Button -->
+                <div style="text-align:center; margin-top:55px;" id="load-more-wrap">
+                    <button class="btn btn-outline" id="load-more-players-btn">
+                        <i class="fas fa-plus"></i> Load More World Prospects
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ── Interactive Player Profile Modal ── -->
+    <div class="sv-modal-overlay" id="player-profile-modal">
+        <div class="sv-modal" style="max-width:780px;">
+            <button class="sv-modal-close" id="close-player-modal" aria-label="Close profile">&times;</button>
+            <div id="player-modal-body">
+                <!-- Dynamically injected -->
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+
+    <!-- Players Database Logic Script -->
+    <script>
+        const initialPlayersData = [
+            {
+                id: 'mbappe',
+                name: 'Kylian Mbappé',
+                displayName: 'MBAPPÉ',
+                rating: 97,
+                position: 'ST',
+                category: 'FW',
+                nationName: 'France',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png',
+                clubName: 'Real Madrid',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Kylian_Mbapp%C3%A9_2018.jpg/800px-Kylian_Mbapp%C3%A9_2018.jpg',
+                stats: { pac: 99, dri: 95, sho: 94, def: 40, pas: 88, phy: 80 },
+                age: 26, height: '1.78 m', foot: 'Right', marketValue: '€180M', goalsSeason: 34, assistsSeason: 12
+            },
+            {
+                id: 'haaland',
+                name: 'Erling Haaland',
+                displayName: 'HAALAND',
+                rating: 95,
+                position: 'ST',
+                category: 'FW',
+                nationName: 'Norway',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/1200px-Flag_of_Norway.svg.png',
+                clubName: 'Manchester City',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Erling_Haaland_2023_%28cropped%29.jpg/800px-Erling_Haaland_2023_%28cropped%29.jpg',
+                stats: { pac: 90, dri: 85, sho: 96, def: 45, pas: 75, phy: 92 },
+                age: 24, height: '1.94 m', foot: 'Left', marketValue: '€180M', goalsSeason: 36, assistsSeason: 6
+            },
+            {
+                id: 'bellingham',
+                name: 'Jude Bellingham',
+                displayName: 'BELLINGHAM',
+                rating: 96,
+                position: 'CAM',
+                category: 'MF',
+                nationName: 'England',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png',
+                clubName: 'Real Madrid',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jude_Bellingham_2024.jpg/800px-Jude_Bellingham_2024.jpg',
+                stats: { pac: 85, dri: 92, sho: 88, def: 82, pas: 90, phy: 88 },
+                age: 21, height: '1.86 m', foot: 'Right', marketValue: '€180M', goalsSeason: 23, assistsSeason: 14
+            },
+            {
+                id: 'vinicius',
+                name: 'Vinícius Júnior',
+                displayName: 'VINI JR.',
+                rating: 95,
+                position: 'LW',
+                category: 'FW',
+                nationName: 'Brazil',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png',
+                clubName: 'Real Madrid',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Vinicius_Junior_2021.jpg/800px-Vinicius_Junior_2021.jpg',
+                stats: { pac: 98, dri: 94, sho: 86, def: 35, pas: 84, phy: 75 },
+                age: 24, height: '1.76 m', foot: 'Right', marketValue: '€180M', goalsSeason: 24, assistsSeason: 16
+            },
+            {
+                id: 'debruyne',
+                name: 'Kevin De Bruyne',
+                displayName: 'DE BRUYNE',
+                rating: 94,
+                position: 'CM',
+                category: 'MF',
+                nationName: 'Belgium',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/1200px-Flag_of_Belgium.svg.png',
+                clubName: 'Manchester City',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_201807091.jpg/800px-Kevin_De_Bruyne_201807091.jpg',
+                stats: { pac: 76, dri: 88, sho: 89, def: 65, pas: 96, phy: 78 },
+                age: 33, height: '1.81 m', foot: 'Right', marketValue: '€50M', goalsSeason: 10, assistsSeason: 22
+            },
+            {
+                id: 'saka',
+                name: 'Bukayo Saka',
+                displayName: 'SAKA',
+                rating: 93,
+                position: 'RW',
+                category: 'FW',
+                nationName: 'England',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png',
+                clubName: 'Arsenal',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bukayo_Saka_2024.jpg/800px-Bukayo_Saka_2024.jpg',
+                stats: { pac: 93, dri: 91, sho: 85, def: 60, pas: 86, phy: 78 },
+                age: 23, height: '1.78 m', foot: 'Left', marketValue: '€140M', goalsSeason: 19, assistsSeason: 15
+            },
+            {
+                id: 'rodri',
+                name: 'Rodrigo Hernández (Rodri)',
+                displayName: 'RODRI',
+                rating: 94,
+                position: 'CDM',
+                category: 'MF',
+                nationName: 'Spain',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png',
+                clubName: 'Manchester City',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Rodri_2024.jpg/800px-Rodri_2024.jpg',
+                stats: { pac: 72, dri: 84, sho: 82, def: 92, pas: 90, phy: 89 },
+                age: 28, height: '1.91 m', foot: 'Right', marketValue: '€130M', goalsSeason: 9, assistsSeason: 14
+            },
+            {
+                id: 'vandijk',
+                name: 'Virgil van Dijk',
+                displayName: 'VAN DIJK',
+                rating: 93,
+                position: 'CB',
+                category: 'DF',
+                nationName: 'Netherlands',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1200px-Flag_of_the_Netherlands.svg.png',
+                clubName: 'Liverpool',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Virgil_van_Dijk_2023.jpg/800px-Virgil_van_Dijk_2023.jpg',
+                stats: { pac: 80, dri: 72, sho: 60, def: 94, pas: 78, phy: 91 },
+                age: 33, height: '1.95 m', foot: 'Right', marketValue: '€35M', goalsSeason: 4, assistsSeason: 2
+            },
+            {
+                id: 'courtois',
+                name: 'Thibaut Courtois',
+                displayName: 'COURTOIS',
+                rating: 92,
+                position: 'GK',
+                category: 'GK',
+                nationName: 'Belgium',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/1200px-Flag_of_Belgium.svg.png',
+                clubName: 'Real Madrid',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Courtois_2018.jpg/800px-Courtois_2018.jpg',
+                stats: { pac: 85, dri: 88, sho: 89, def: 48, pas: 76, phy: 90 },
+                age: 32, height: '2.00 m', foot: 'Left', marketValue: '€30M', goalsSeason: 0, assistsSeason: 1
+            },
+            {
+                id: 'musiala',
+                name: 'Jamal Musiala',
+                displayName: 'MUSIALA',
+                rating: 92,
+                position: 'CAM',
+                category: 'MF',
+                nationName: 'Germany',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
+                clubName: 'Bayern Munich',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Jamal_Musiala_2023.jpg/800px-Jamal_Musiala_2023.jpg',
+                stats: { pac: 89, dri: 96, sho: 84, def: 50, pas: 87, phy: 72 },
+                age: 22, height: '1.84 m', foot: 'Right', marketValue: '€130M', goalsSeason: 16, assistsSeason: 11
+            },
+            {
+                id: 'kane',
+                name: 'Harry Kane',
+                displayName: 'KANE',
+                rating: 94,
+                position: 'ST',
+                category: 'FW',
+                nationName: 'England',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png',
+                clubName: 'Bayern Munich',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Harry_Kane_2018.jpg/800px-Harry_Kane_2018.jpg',
+                stats: { pac: 74, dri: 84, sho: 95, def: 52, pas: 89, phy: 86 },
+                age: 31, height: '1.88 m', foot: 'Right', marketValue: '€100M', goalsSeason: 38, assistsSeason: 12
+            },
+            {
+                id: 'salah',
+                name: 'Mohamed Salah',
+                displayName: 'SALAH',
+                rating: 93,
+                position: 'RW',
+                category: 'FW',
+                nationName: 'Egypt',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/1200px-Flag_of_Egypt.svg.png',
+                clubName: 'Liverpool',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Mohamed_Salah_2018.jpg/800px-Mohamed_Salah_2018.jpg',
+                stats: { pac: 91, dri: 90, sho: 91, def: 45, pas: 85, phy: 78 },
+                age: 32, height: '1.75 m', foot: 'Left', marketValue: '€55M', goalsSeason: 25, assistsSeason: 14
+            },
+            {
+                id: 'pedri',
+                name: 'Pedro González (Pedri)',
+                displayName: 'PEDRI',
+                rating: 91,
+                position: 'CM',
+                category: 'MF',
+                nationName: 'Spain',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png',
+                clubName: 'Barcelona',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Pedri_2021.jpg/800px-Pedri_2021.jpg',
+                stats: { pac: 80, dri: 92, sho: 78, def: 74, pas: 91, phy: 72 },
+                age: 22, height: '1.74 m', foot: 'Right', marketValue: '€100M', goalsSeason: 8, assistsSeason: 12
+            },
+            {
+                id: 'rudiger',
+                name: 'Antonio Rüdiger',
+                displayName: 'RÜDIGER',
+                rating: 91,
+                position: 'CB',
+                category: 'DF',
+                nationName: 'Germany',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
+                clubName: 'Real Madrid',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Antonio_R%C3%BCdiger_2018.jpg/800px-Antonio_R%C3%BCdiger_2018.jpg',
+                stats: { pac: 84, dri: 70, sho: 55, def: 91, pas: 75, phy: 90 },
+                age: 31, height: '1.90 m', foot: 'Right', marketValue: '€25M', goalsSeason: 3, assistsSeason: 1
+            },
+            {
+                id: 'davies',
+                name: 'Alphonso Davies',
+                displayName: 'DAVIES',
+                rating: 90,
+                position: 'LB',
+                category: 'DF',
+                nationName: 'Canada',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1200px-Flag_of_Canada.svg.png',
+                clubName: 'Bayern Munich',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/1200px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Alphonso_Davies_2022.jpg/800px-Alphonso_Davies_2022.jpg',
+                stats: { pac: 96, dri: 88, sho: 74, def: 84, pas: 82, phy: 83 },
+                age: 24, height: '1.83 m', foot: 'Left', marketValue: '€50M', goalsSeason: 4, assistsSeason: 8
+            },
+            {
+                id: 'alisson',
+                name: 'Alisson Becker',
+                displayName: 'ALISSON',
+                rating: 91,
+                position: 'GK',
+                category: 'GK',
+                nationName: 'Brazil',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png',
+                clubName: 'Liverpool',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Alisson_Becker_2018.jpg/800px-Alisson_Becker_2018.jpg',
+                stats: { pac: 86, dri: 89, sho: 85, def: 52, pas: 85, phy: 90 },
+                age: 32, height: '1.93 m', foot: 'Right', marketValue: '€28M', goalsSeason: 0, assistsSeason: 2
+            }
+        ];
+
+        const additionalProspects = [
+            {
+                id: 'yamal',
+                name: 'Lamine Yamal',
+                displayName: 'YAMAL',
+                rating: 92,
+                position: 'RW',
+                category: 'FW',
+                nationName: 'Spain',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png',
+                clubName: 'Barcelona',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Lamine_Yamal_2024.jpg/800px-Lamine_Yamal_2024.jpg',
+                stats: { pac: 94, dri: 95, sho: 84, def: 42, pas: 90, phy: 70 },
+                age: 18, height: '1.80 m', foot: 'Left', marketValue: '€150M', goalsSeason: 14, assistsSeason: 18
+            },
+            {
+                id: 'wirtz',
+                name: 'Florian Wirtz',
+                displayName: 'WIRTZ',
+                rating: 93,
+                position: 'CAM',
+                category: 'MF',
+                nationName: 'Germany',
+                nationFlag: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png',
+                clubName: 'Bayer Leverkusen',
+                clubLogo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1200px-Bayer_04_Leverkusen_logo.svg.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Florian_Wirtz_2024.jpg/800px-Florian_Wirtz_2024.jpg',
+                stats: { pac: 87, dri: 94, sho: 86, def: 55, pas: 92, phy: 75 },
+                age: 22, height: '1.77 m', foot: 'Right', marketValue: '€130M', goalsSeason: 18, assistsSeason: 20
+            }
+        ];
+
+        let currentPlayers = [...initialPlayersData];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('players-container');
+            const searchInput = document.getElementById('player-search-input');
+            const posFilter = document.getElementById('position-filter');
+            const sortFilter = document.getElementById('sort-filter');
+            const clearBtn = document.getElementById('clear-filters-btn');
+            const emptyState = document.getElementById('no-players-found');
+            const emptyResetBtn = document.getElementById('empty-reset-btn');
+            const countDisplay = document.getElementById('visible-player-count');
+            const loadMoreBtn = document.getElementById('load-more-players-btn');
+            const loadMoreWrap = document.getElementById('load-more-wrap');
+
+            // Render function
+            function renderPlayers() {
+                const query = searchInput.value.trim().toLowerCase();
+                const selectedPos = posFilter.value;
+                const selectedSort = sortFilter.value;
+
+                // Filter
+                let filtered = currentPlayers.filter(p => {
+                    const matchesSearch = !query || 
+                        p.name.toLowerCase().includes(query) || 
+                        p.clubName.toLowerCase().includes(query) || 
+                        p.nationName.toLowerCase().includes(query) || 
+                        p.position.toLowerCase().includes(query);
+                    
+                    const matchesPos = (selectedPos === 'all') || (p.category === selectedPos);
+
+                    return matchesSearch && matchesPos;
+                });
+
+                // Sort
+                filtered.sort((a, b) => {
+                    switch (selectedSort) {
+                        case 'rating-desc': return b.rating - a.rating;
+                        case 'pac-desc': return b.stats.pac - a.stats.pac;
+                        case 'sho-desc': return b.stats.sho - a.stats.sho;
+                        case 'pas-desc': return b.stats.pas - a.stats.pas;
+                        case 'dri-desc': return b.stats.dri - a.stats.dri;
+                        case 'def-desc': return b.stats.def - a.stats.def;
+                        case 'phy-desc': return b.stats.phy - a.stats.phy;
+                        default: return b.rating - a.rating;
+                    }
+                });
+
+                // Display count
+                countDisplay.textContent = filtered.length;
+
+                // Render HTML
+                if (filtered.length === 0) {
+                    container.innerHTML = '';
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                    container.innerHTML = filtered.map(p => `
+                        <div class="fut-card" onclick="openPlayerModal('${p.id}')">
+                            <div class="fut-header">
+                                <div class="fut-meta">
+                                    <div class="fut-rating">${p.rating}</div>
+                                    <div class="fut-pos">${p.position}</div>
+                                    <img src="${p.nationFlag}" class="fut-badge-icon" alt="${p.nationName}">
+                                    <img src="${p.clubLogo}" class="fut-club-icon" alt="${p.clubName}">
+                                </div>
+                                <div class="fut-img-container">
+                                    <img src="${p.image}" class="fut-img" alt="${p.name}">
+                                </div>
+                            </div>
+                            <div class="fut-body">
+                                <div class="fut-name">${p.displayName}</div>
+                                <div class="fut-stats">
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.pac}</span> <span class="stat-lbl">PAC</span></div>
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.dri}</span> <span class="stat-lbl">DRI</span></div>
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.sho}</span> <span class="stat-lbl">SHO</span></div>
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.def}</span> <span class="stat-lbl">DEF</span></div>
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.pas}</span> <span class="stat-lbl">PAS</span></div>
+                                    <div class="fut-stat"><span class="stat-val">${p.stats.phy}</span> <span class="stat-lbl">PHY</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Events
+            searchInput.addEventListener('input', renderPlayers);
+            posFilter.addEventListener('change', renderPlayers);
+            sortFilter.addEventListener('change', renderPlayers);
+
+            function resetFilters() {
+                searchInput.value = '';
+                posFilter.value = 'all';
+                sortFilter.value = 'rating-desc';
+                renderPlayers();
+                showToast('Filters reset to default ⚽');
+            }
+
+            clearBtn.addEventListener('click', resetFilters);
+            emptyResetBtn.addEventListener('click', resetFilters);
+
+            // Load more
+            loadMoreBtn.addEventListener('click', () => {
+                currentPlayers.push(...additionalProspects);
+                loadMoreWrap.style.display = 'none';
+                renderPlayers();
+                showToast('Loaded 2 additional elite prospects! 🌟');
+            });
+
+            // Initial render
+            renderPlayers();
+        });
+
+        // ── Player Modal Opener ──
+        function openPlayerModal(playerId) {
+            const all = [...initialPlayersData, ...additionalProspects];
+            const p = all.find(item => item.id === playerId);
+            if (!p) return;
+
+            const modalBody = document.getElementById('player-modal-body');
+            modalBody.innerHTML = `
+                <div style="display:flex; gap:30px; align-items:center; border-bottom:1px solid var(--glass-border); padding-bottom:25px; margin-bottom:25px; flex-wrap:wrap;">
+                    <div style="width:110px; height:110px; border-radius:50%; overflow:hidden; border:3px solid var(--accent-gold); box-shadow:0 0 25px rgba(255,215,0,0.3); background:#000;">
+                        <img src="${p.image}" alt="${p.name}" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+                    </div>
+                    <div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+                            <h2 style="margin:0; font-size:1.8rem;">${p.name}</h2>
+                            <span class="header-badge" style="background:rgba(255,215,0,0.15); border-color:#FFD700; color:#FFD700;">${p.rating} OVR</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:12px; color:var(--secondary-text); font-size:0.95rem;">
+                            <img src="${p.clubLogo}" width="20" height="20" style="object-fit:contain;" alt="${p.clubName}">
+                            <span>${p.clubName}</span> &bull; 
+                            <img src="${p.nationFlag}" width="20" height="14" style="object-fit:cover;" alt="${p.nationName}">
+                            <span>${p.nationName}</span> &bull; 
+                            <span style="color:var(--primary); font-weight:700;">${p.position}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biography & Key Facts -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:12px; margin-bottom:25px;">
+                    <div class="glass" style="padding:12px; border-radius:10px; text-align:center;">
+                        <div style="font-size:0.75rem; color:var(--secondary-text); text-transform:uppercase;">Age</div>
+                        <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">${p.age}</div>
+                    </div>
+                    <div class="glass" style="padding:12px; border-radius:10px; text-align:center;">
+                        <div style="font-size:0.75rem; color:var(--secondary-text); text-transform:uppercase;">Height</div>
+                        <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">${p.height}</div>
+                    </div>
+                    <div class="glass" style="padding:12px; border-radius:10px; text-align:center;">
+                        <div style="font-size:0.75rem; color:var(--secondary-text); text-transform:uppercase;">Foot</div>
+                        <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">${p.foot}</div>
+                    </div>
+                    <div class="glass" style="padding:12px; border-radius:10px; text-align:center;">
+                        <div style="font-size:0.75rem; color:var(--secondary-text); text-transform:uppercase;">Value</div>
+                        <div style="font-size:1.2rem; font-weight:800; color:var(--primary);">${p.marketValue}</div>
+                    </div>
+                    <div class="glass" style="padding:12px; border-radius:10px; text-align:center;">
+                        <div style="font-size:0.75rem; color:var(--secondary-text); text-transform:uppercase;">Goals '26</div>
+                        <div style="font-size:1.2rem; font-weight:800; color:#FFD700;">${p.goalsSeason}</div>
+                    </div>
+                </div>
+
+                <!-- Attributes Progress Bars -->
+                <h3 style="font-size:1.1rem; margin-bottom:15px;"><i class="fas fa-chart-bar" style="color:var(--primary);"></i> In-Depth FUT Attributes</h3>
+                <div class="player-modal-attributes-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px 30px;">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Pace</span>
+                            <span style="color:var(--primary);">${p.stats.pac}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.pac}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Dribbling</span>
+                            <span style="color:var(--primary);">${p.stats.dri}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.dri}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Shooting</span>
+                            <span style="color:var(--primary);">${p.stats.sho}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.sho}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Defending</span>
+                            <span style="color:var(--primary);">${p.stats.def}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.def}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Passing</span>
+                            <span style="color:var(--primary);">${p.stats.pas}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.pas}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; margin-bottom:4px;">
+                            <span>Physicality</span>
+                            <span style="color:var(--primary);">${p.stats.phy}</span>
+                        </div>
+                        <div style="height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden;">
+                            <div style="width:${p.stats.phy}%; height:100%; background:var(--primary);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:right; margin-top:25px;">
+                    <button class="btn btn-primary btn-sm" onclick="document.getElementById('player-profile-modal').classList.remove('active'); showToast('Added ${p.name} to scout watchlist! ⭐')">
+                        <i class="fas fa-star"></i> Add to Watchlist
+                    </button>
+                </div>
+            `;
+
+            const modal = document.getElementById('player-profile-modal');
+            modal.classList.add('active');
+        }
+
+        document.getElementById('close-player-modal').addEventListener('click', () => {
+            document.getElementById('player-profile-modal').classList.remove('active');
+        });
+
+        document.getElementById('player-profile-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('player-profile-modal')) {
+                document.getElementById('player-profile-modal').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Match Center - Real Madrid vs Manchester City. Live UCL score, tactical pitch lineups, momentum telemetry, and highlight videos.">
+    <title>SoccerVerse - Real Madrid vs Manchester City (UCL Match Center)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top:0;">
+        <!-- ── Match Center Hero Banner ── -->
+        <div class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="container detail-content">
+                <div class="breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <a href="games.html">Matches</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <span style="color:var(--primary);"><i class="fas fa-trophy" style="color:var(--accent-gold);"></i> UEFA Champions League</span>
+                </div>
+
+                <div class="match-center-banner">
+                    <!-- Home Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+                            alt="Real Madrid" class="detail-team-logo">
+                        <h2 class="detail-team-name">Real Madrid</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">1st in UCL Group</span>
+                    </div>
+
+                    <!-- Center Scoreboard -->
+                    <div class="detail-score-box">
+                        <div class="detail-score-status" style="background:rgba(0,255,179,0.15); color:var(--primary); border:1px solid rgba(0,255,179,0.4);">
+                            <span class="live-dot" style="display:inline-block; margin-right:6px;"></span> 78' 2nd Half &bull; Live
+                        </div>
+                        <div class="detail-score-digits">
+                            2 - 1
+                        </div>
+                        <div class="detail-match-info">
+                            <span><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Santiago Bernabéu</span>
+                            <span><i class="fas fa-users" style="color:var(--secondary);"></i> 81,044 Attendance</span>
+                            <span><i class="fas fa-whistle" style="color:var(--accent-gold);"></i> Ref: S. Marciniak</span>
+                        </div>
+                        <div class="detail-actions-bar">
+                            <button type="button" class="btn btn-primary btn-sm btn-highlights"
+                                data-title="Real Madrid 2 - 1 Man City (78' In-Play Highlights)"
+                                data-desc="Vinícius Júnior thunderbolt & Bellingham winner turn the tie on its head at the Bernabéu."
+                                data-poster="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                <i class="fas fa-play"></i> Watch Key Moments
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="showToast('Match telemetry synced with live satellite feed! 🛰️', 'info')">
+                                <i class="fas fa-sync-alt"></i> Refresh Data
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Away Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png"
+                            alt="Manchester City" class="detail-team-logo">
+                        <h2 class="detail-team-name">Man City</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">Defending Champions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Interactive Content Section ── -->
+        <section class="section">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="detail-nav-tabs">
+                    <button class="detail-nav-tab active" data-tab-target="tab-overview">
+                        <i class="fas fa-stream"></i> Match Overview
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-lineups">
+                        <i class="fas fa-futbol"></i> Tactical Lineups
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-stats">
+                        <i class="fas fa-chart-bar"></i> Live Telemetry & Stats
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-h2h">
+                        <i class="fas fa-history"></i> Head-to-Head & Form
+                    </button>
+                </div>
+
+                <!-- ── TAB 1: OVERVIEW ── -->
+                <div id="tab-overview" class="tab-pane active">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="overview-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-clock" style="color:var(--primary);"></i> Match Timeline
+                            </h3>
+                            <div class="timeline-list">
+                                <div class="timeline-item">
+                                    <div class="timeline-min">78'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Real Madrid 2 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Jude Bellingham curls into the top right corner (Assist: Vinícius Júnior)</div>
+                                    </div>
+                                    <span class="form-badge w" title="Goal scored">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">68'</div>
+                                    <div class="timeline-icon yellow"><i class="fas fa-square"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">Yellow Card &bull; Real Madrid</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Dani Carvajal booked for a tactical foul on Grealish</div>
+                                    </div>
+                                    <span class="form-badge" style="background:#FFD700; color:#000;" title="Yellow Card">YC</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">45'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Real Madrid 1 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Vinícius Júnior unleashes a 25-yard rocket past Ederson (Assist: E. Camavinga)</div>
+                                    </div>
+                                    <span class="form-badge w" title="Goal scored">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">33'</div>
+                                    <div class="timeline-icon yellow"><i class="fas fa-square"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">Yellow Card &bull; Man City</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Rodri booked for halting a counterattack</div>
+                                    </div>
+                                    <span class="form-badge" style="background:#FFD700; color:#000;" title="Yellow Card">YC</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">12'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! Man City 0 - 1</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Erling Haaland taps in from close range (Assist: Kevin De Bruyne)</div>
+                                    </div>
+                                    <span class="form-badge w" style="background:var(--secondary);" title="Goal scored">G</span>
+                                </div>
+                            </div>
+
+                            <!-- Tactical Summary -->
+                            <div class="glass" style="margin-top:30px; padding:25px; border-radius:16px;">
+                                <h4 style="color:var(--primary); margin-bottom:12px;"><i class="fas fa-brain"></i> Tactical Breakdown</h4>
+                                <p style="color:var(--secondary-text); font-size:0.95rem; line-height:1.7; margin-bottom:0;">
+                                    Ancelotti's diamond midfield structure has successfully neutralized Man City's inverted full-back build-up. Vinícius Júnior and Rodrygo have consistently exploited the wide transitions, creating over 2.14 Expected Goals (xG) against Guardiola's high defensive line.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Widgets -->
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-star" style="color:var(--accent-gold);"></i> Man of the Match
+                            </h3>
+                            <div class="motm-card">
+                                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Jude Bellingham" class="motm-avatar">
+                                <div>
+                                    <span style="color:var(--accent-gold); font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">Rating 8.9 / 10</span>
+                                    <h4 style="margin:4px 0 2px; font-size:1.2rem;">Jude Bellingham</h4>
+                                    <div style="color:var(--secondary-text); font-size:0.82rem;">Real Madrid &bull; Attacking Midfielder</div>
+                                    <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                                        <span class="badge-count" style="background:rgba(0,255,179,0.15); color:var(--primary);">1 Goal</span>
+                                        <span class="badge-count" style="background:rgba(0,212,255,0.15); color:var(--secondary);">4 Key Passes</span>
+                                        <span class="badge-count" style="background:rgba(255,255,255,0.08);">92% Pass</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Possession Meter -->
+                            <div class="glass" style="margin-top:25px; padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:15px; font-size:1rem;">Match Momentum & Possession</h4>
+                                <div class="stat-comp-row">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">Real Madrid 54%</span>
+                                        <span class="stat-comp-label">Possession</span>
+                                        <span style="color:var(--secondary);">Man City 46%</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 54%;"></div>
+                                        <div class="stat-bar-away" style="width: 46%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="stat-comp-row" style="margin-bottom:0;">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">2.14 xG</span>
+                                        <span class="stat-comp-label">Expected Goals</span>
+                                        <span style="color:var(--secondary);">1.88 xG</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 53%;"></div>
+                                        <div class="stat-bar-away" style="width: 47%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 2: LINEUPS (Tactical Pitch) ── -->
+                <div id="tab-lineups" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="lineup-grid">
+                        <!-- Pitch Diagram -->
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--primary);"></span>
+                                    <strong style="color:var(--white);">Real Madrid (4-3-1-2)</strong>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <strong style="color:var(--secondary);">Man City (4-1-4-1)</strong>
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--secondary);"></span>
+                                </div>
+                            </div>
+
+                            <div class="pitch-container">
+                                <div class="pitch-center-line"></div>
+                                <div class="pitch-center-circle"></div>
+
+                                <!-- Real Madrid (Home - Top Half) -->
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">1</div><span class="pitch-player-name">Courtois (GK)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">2</div><span class="pitch-player-name">Carvajal</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">22</div><span class="pitch-player-name">Rüdiger</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">3</div><span class="pitch-player-name">Militão</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">23</div><span class="pitch-player-name">Mendy</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">15</div><span class="pitch-player-name">Valverde</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">14</div><span class="pitch-player-name">Tchouaméni</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">12</div><span class="pitch-player-name">Camavinga</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">5</div><span class="pitch-player-name" style="border-color:var(--accent-gold); color:var(--accent-gold);">Bellingham</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">7</div><span class="pitch-player-name">Vinícius Jr.</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">11</div><span class="pitch-player-name">Rodrygo</span></div>
+                                </div>
+
+                                <!-- Manchester City (Away - Bottom Half) -->
+                                <div class="pitch-lineup-row" style="margin-top:20px;">
+                                    <div class="pitch-player away"><div class="pitch-player-num">9</div><span class="pitch-player-name">Haaland (ST)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">10</div><span class="pitch-player-name">Grealish</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">17</div><span class="pitch-player-name">De Bruyne</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">20</div><span class="pitch-player-name">B. Silva</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">47</div><span class="pitch-player-name">Foden</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">16</div><span class="pitch-player-name">Rodri (CDM)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">24</div><span class="pitch-player-name">Gvardiol</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">3</div><span class="pitch-player-name">Dias</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">25</div><span class="pitch-player-name">Akanji</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">2</div><span class="pitch-player-name">Walker</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">31</div><span class="pitch-player-name">Ederson (GK)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bench & Managers -->
+                        <div>
+                            <div class="glass" style="padding:22px; border-radius:16px; margin-bottom:24px;">
+                                <h4 style="margin-bottom:12px; color:var(--primary);"><i class="fas fa-user-tie"></i> Managers</h4>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0; border-bottom:1px solid var(--glass-border);">
+                                    <span>Carlo Ancelotti</span>
+                                    <span style="color:var(--secondary-text);">Real Madrid</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0;">
+                                    <span>Pep Guardiola</span>
+                                    <span style="color:var(--secondary-text);">Man City</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:12px;"><i class="fas fa-users-cog"></i> Substitutes Bench</h4>
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--primary); margin-top:8px;">Real Madrid</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">10</span> Modrić</div>
+                                    <div class="bench-player"><span class="bench-num">21</span> Brahim</div>
+                                    <div class="bench-player"><span class="bench-num">16</span> Endrick</div>
+                                    <div class="bench-player"><span class="bench-num">13</span> Lunin (GK)</div>
+                                </div>
+
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--secondary); margin-top:16px;">Manchester City</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">19</span> Álvarez</div>
+                                    <div class="bench-player"><span class="bench-num">8</span> Kovačić</div>
+                                    <div class="bench-player"><span class="bench-num">11</span> Doku</div>
+                                    <div class="bench-player"><span class="bench-num">18</span> Ortega (GK)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 3: STATS & TELEMETRY ── -->
+                <div id="tab-stats" class="tab-pane">
+                    <div class="glass" style="padding:35px; border-radius:20px; max-width:900px; margin:0 auto;">
+                        <h3 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">Match Telemetry Comparison</h3>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">54%</span>
+                                <span class="stat-comp-label">Ball Possession</span>
+                                <span style="color:var(--secondary);">46%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 54%;"></div>
+                                <div class="stat-bar-away" style="width: 46%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">2.14</span>
+                                <span class="stat-comp-label">Expected Goals (xG)</span>
+                                <span style="color:var(--secondary);">1.88</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 53%;"></div>
+                                <div class="stat-bar-away" style="width: 47%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">15</span>
+                                <span class="stat-comp-label">Total Shots</span>
+                                <span style="color:var(--secondary);">12</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 56%;"></div>
+                                <div class="stat-bar-away" style="width: 44%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">7</span>
+                                <span class="stat-comp-label">Shots on Target</span>
+                                <span style="color:var(--secondary);">5</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 58%;"></div>
+                                <div class="stat-bar-away" style="width: 42%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">89%</span>
+                                <span class="stat-comp-label">Pass Accuracy</span>
+                                <span style="color:var(--secondary);">91%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 49%;"></div>
+                                <div class="stat-bar-away" style="width: 51%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">6</span>
+                                <span class="stat-comp-label">Corner Kicks</span>
+                                <span style="color:var(--secondary);">5</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 55%;"></div>
+                                <div class="stat-bar-away" style="width: 45%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">11</span>
+                                <span class="stat-comp-label">Fouls Committed</span>
+                                <span style="color:var(--secondary);">14</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 44%;"></div>
+                                <div class="stat-bar-away" style="width: 56%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">4</span>
+                                <span class="stat-comp-label">Goalkeeper Saves</span>
+                                <span style="color:var(--secondary);">5</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 44%;"></div>
+                                <div class="stat-bar-away" style="width: 56%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 4: HEAD-TO-HEAD & FORM ── -->
+                <div id="tab-h2h" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:35px;" class="h2h-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-history" style="color:var(--primary);"></i> Recent Meetings</h3>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Man City 1 - 1 Real Madrid</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">UCL Quarter-Finals (RMA won 4-3 on pens)</div>
+                                </div>
+                                <span class="form-badge d">D</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Real Madrid 3 - 3 Man City</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">UCL Quarter-Finals 1st Leg</div>
+                                </div>
+                                <span class="form-badge d">D</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Man City 4 - 0 Real Madrid</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">UCL Semi-Finals 2nd Leg</div>
+                                </div>
+                                <span class="form-badge l">L</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Real Madrid 1 - 1 Man City</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">UCL Semi-Finals 1st Leg</div>
+                                </div>
+                                <span class="form-badge d">D</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Real Madrid 3 - 1 Man City</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">UCL Semi-Finals (AET)</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-chart-pie" style="color:var(--secondary);"></i> Live Win Probability</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-between; font-weight:700; font-size:0.9rem; margin-bottom:8px;">
+                                    <span style="color:var(--primary);">Real Madrid 62%</span>
+                                    <span style="color:var(--secondary-text);">Draw 21%</span>
+                                    <span style="color:var(--secondary);">Man City 17%</span>
+                                </div>
+                                <div class="prob-meter-track">
+                                    <div class="prob-fill-home" style="width: 62%;"></div>
+                                    <div class="prob-fill-draw" style="width: 21%;"></div>
+                                    <div class="prob-fill-away" style="width: 17%;"></div>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--secondary-text); margin-top:14px; line-height:1.6;">
+                                    Real Madrid currently hold a 62% statistical win expectancy based on their 2-1 lead in the 78th minute and defensive counter-attack shape.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>

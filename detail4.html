@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Match Center - AC Milan vs Inter Milan (Derby della Madonnina). Live score, tactical pitch lineups, momentum telemetry, and highlights.">
+    <title>SoccerVerse - AC Milan vs Inter (Serie A Derby Match Center)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="games">
+
+    <header id="site-header"></header>
+
+    <div class="page-wrapper" style="padding-top:0;">
+        <!-- ── Match Center Hero Banner ── -->
+        <div class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="container detail-content">
+                <div class="breadcrumbs">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <a href="games.html">Matches</a>
+                    <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i>
+                    <span style="color:var(--primary);"><i class="fas fa-shield-alt" style="color:#00FFB3;"></i> Serie A</span>
+                </div>
+
+                <div class="match-center-banner">
+                    <!-- Home Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1200px-Logo_of_AC_Milan.svg.png"
+                            alt="AC Milan" class="detail-team-logo">
+                        <h2 class="detail-team-name">AC Milan</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">Rossoneri</span>
+                    </div>
+
+                    <!-- Center Scoreboard -->
+                    <div class="detail-score-box">
+                        <div class="detail-score-status" style="background:rgba(0,255,179,0.15); color:var(--primary); border:1px solid rgba(0,255,179,0.4);">
+                            <span class="live-dot" style="display:inline-block; margin-right:6px;"></span> 45' Halftime &bull; Live
+                        </div>
+                        <div class="detail-score-digits">
+                            1 - 0
+                        </div>
+                        <div class="detail-match-info">
+                            <span><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> San Siro (Stadio Giuseppe Meazza)</span>
+                            <span><i class="fas fa-users" style="color:var(--secondary);"></i> 75,923 Attendance</span>
+                            <span><i class="fas fa-whistle" style="color:var(--accent-gold);"></i> Ref: D. Orsato</span>
+                        </div>
+                        <div class="detail-actions-bar">
+                            <button type="button" class="btn btn-primary btn-sm btn-highlights"
+                                data-title="AC Milan 1 - 0 Inter (1st Half Derby Highlights)"
+                                data-desc="Rafael Leão cuts through the Nerazzurri backline to score a sensational solo opener at the San Siro."
+                                data-poster="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                <i class="fas fa-play"></i> Watch 1st Half Highlights
+                            </button>
+                            <button type="button" class="btn btn-outline btn-sm" onclick="showToast('2nd half kicks off in 10 minutes! ⚽', 'info')">
+                                <i class="fas fa-clock"></i> 2nd Half Countdown
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Away Team -->
+                    <div class="detail-team">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png"
+                            alt="Inter Milan" class="detail-team-logo">
+                        <h2 class="detail-team-name">Inter</h2>
+                        <span style="font-size:0.85rem; color:var(--secondary-text); font-weight:600;">Nerazzurri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Interactive Content Section ── -->
+        <section class="section">
+            <div class="container">
+                <!-- Navigation Tabs -->
+                <div class="detail-nav-tabs">
+                    <button class="detail-nav-tab active" data-tab-target="tab-overview">
+                        <i class="fas fa-stream"></i> 1st Half Events
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-lineups">
+                        <i class="fas fa-futbol"></i> Tactical Lineups
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-stats">
+                        <i class="fas fa-chart-bar"></i> Live Telemetry
+                    </button>
+                    <button class="detail-nav-tab" data-tab-target="tab-h2h">
+                        <i class="fas fa-history"></i> Derby History
+                    </button>
+                </div>
+
+                <!-- ── TAB 1: OVERVIEW ── -->
+                <div id="tab-overview" class="tab-pane active">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="overview-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-clock" style="color:var(--primary);"></i> Match Timeline
+                            </h3>
+                            <div class="timeline-list">
+                                <div class="timeline-item">
+                                    <div class="timeline-min">41'</div>
+                                    <div class="timeline-icon goal"><i class="fas fa-futbol"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">GOAL! AC Milan 1 - 0</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Rafael Leão dribbles past Pavard and buries into bottom corner (Assist: C. Pulisic)</div>
+                                    </div>
+                                    <span class="form-badge w">G</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">29'</div>
+                                    <div class="timeline-icon yellow"><i class="fas fa-square"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--white);">Yellow Card &bull; Inter</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Alessandro Bastoni booked for dragging down Morata on the counter</div>
+                                    </div>
+                                    <span class="form-badge" style="background:#FFD700; color:#000;">YC</span>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-min">18'</div>
+                                    <div class="timeline-icon sub"><i class="fas fa-hand-paper"></i></div>
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:var(--primary);">Key Save &bull; AC Milan</div>
+                                        <div style="font-size:0.88rem; color:var(--secondary-text);">Mike Maignan with an acrobatic reflex stop denying Lautaro Martínez header</div>
+                                    </div>
+                                    <span class="form-badge w" style="background:var(--primary); color:#000;">SV</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:30px; padding:25px; border-radius:16px;">
+                                <h4 style="color:var(--primary); margin-bottom:12px;"><i class="fas fa-brain"></i> Halftime Tactical Analysis</h4>
+                                <p style="color:var(--secondary-text); font-size:0.95rem; line-height:1.7; margin-bottom:0;">
+                                    Milan have looked extremely sharp on the transition, utilizing Pulisic and Leão in half-spaces behind Inter's advancing wing-backs. Inzaghi's side had 52% possession but struggled to penetrate Milan's low defensive block.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-star" style="color:var(--accent-gold);"></i> 1st Half Top Performer
+                            </h3>
+                            <div class="motm-card">
+                                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                                    alt="Rafael Leao" class="motm-avatar">
+                                <div>
+                                    <span style="color:var(--accent-gold); font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">Rating 8.7 / 10</span>
+                                    <h4 style="margin:4px 0 2px; font-size:1.2rem;">Rafael Leão</h4>
+                                    <div style="color:var(--secondary-text); font-size:0.82rem;">AC Milan &bull; Left Winger</div>
+                                    <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
+                                        <span class="badge-count" style="background:rgba(0,255,179,0.15); color:var(--primary);">1 Goal</span>
+                                        <span class="badge-count" style="background:rgba(0,212,255,0.15); color:var(--secondary);">3 Take-ons</span>
+                                        <span class="badge-count" style="background:rgba(255,255,255,0.08);">100% Shot Acc</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="margin-top:25px; padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:15px; font-size:1rem;">1st Half Possession & xG</h4>
+                                <div class="stat-comp-row">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">Milan 48%</span>
+                                        <span class="stat-comp-label">Possession</span>
+                                        <span style="color:var(--secondary);">Inter 52%</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 48%;"></div>
+                                        <div class="stat-bar-away" style="width: 52%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="stat-comp-row" style="margin-bottom:0;">
+                                    <div class="stat-comp-meta">
+                                        <span style="color:var(--primary);">1.12 xG</span>
+                                        <span class="stat-comp-label">Expected Goals</span>
+                                        <span style="color:var(--secondary);">0.94 xG</span>
+                                    </div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-home" style="width: 54%;"></div>
+                                        <div class="stat-bar-away" style="width: 46%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 2: LINEUPS ── -->
+                <div id="tab-lineups" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:35px;" class="lineup-grid">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--primary);"></span>
+                                    <strong style="color:var(--white);">AC Milan (4-2-3-1)</strong>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <strong style="color:var(--secondary);">Inter Milan (3-5-2)</strong>
+                                    <span style="width:12px; height:12px; border-radius:50%; background:var(--secondary);"></span>
+                                </div>
+                            </div>
+
+                            <div class="pitch-container">
+                                <div class="pitch-center-line"></div>
+                                <div class="pitch-center-circle"></div>
+
+                                <!-- AC Milan (Top) -->
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">16</div><span class="pitch-player-name">Maignan (GK)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">22</div><span class="pitch-player-name">Emerson</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">23</div><span class="pitch-player-name">Tomori</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">31</div><span class="pitch-player-name">Pavlović</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">19</div><span class="pitch-player-name">Hernández (C)</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">29</div><span class="pitch-player-name">Fofana</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">14</div><span class="pitch-player-name">Reijnders</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">11</div><span class="pitch-player-name">Pulisic</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">8</div><span class="pitch-player-name">Loftus-Cheek</span></div>
+                                    <div class="pitch-player"><div class="pitch-player-num">10</div><span class="pitch-player-name" style="border-color:var(--accent-gold); color:var(--accent-gold);">Leão</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player"><div class="pitch-player-num">7</div><span class="pitch-player-name">Morata (ST)</span></div>
+                                </div>
+
+                                <!-- Inter (Bottom) -->
+                                <div class="pitch-lineup-row" style="margin-top:20px;">
+                                    <div class="pitch-player away"><div class="pitch-player-num">10</div><span class="pitch-player-name">Lautaro (C)</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">9</div><span class="pitch-player-name">Thuram</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">23</div><span class="pitch-player-name">Barella</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">20</div><span class="pitch-player-name">Çalhanoğlu</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">22</div><span class="pitch-player-name">Mkhitaryan</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">2</div><span class="pitch-player-name">Dumfries</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">28</div><span class="pitch-player-name">Pavard</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">15</div><span class="pitch-player-name">Acerbi</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">95</div><span class="pitch-player-name">Bastoni</span></div>
+                                    <div class="pitch-player away"><div class="pitch-player-num">32</div><span class="pitch-player-name">Dimarco</span></div>
+                                </div>
+                                <div class="pitch-lineup-row">
+                                    <div class="pitch-player away"><div class="pitch-player-num">1</div><span class="pitch-player-name">Sommer (GK)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bench -->
+                        <div>
+                            <div class="glass" style="padding:22px; border-radius:16px; margin-bottom:24px;">
+                                <h4 style="margin-bottom:12px; color:var(--primary);"><i class="fas fa-user-tie"></i> Managers</h4>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0; border-bottom:1px solid var(--glass-border);">
+                                    <span>Paulo Fonseca</span>
+                                    <span style="color:var(--secondary-text);">AC Milan</span>
+                                </div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.92rem; padding:8px 0;">
+                                    <span>Simone Inzaghi</span>
+                                    <span style="color:var(--secondary-text);">Inter</span>
+                                </div>
+                            </div>
+
+                            <div class="glass" style="padding:22px; border-radius:16px;">
+                                <h4 style="margin-bottom:12px;"><i class="fas fa-users-cog"></i> Bench Players</h4>
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--primary); margin-top:8px;">AC Milan</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">90</span> Abraham</div>
+                                    <div class="bench-player"><span class="bench-num">21</span> Chukwueze</div>
+                                    <div class="bench-player"><span class="bench-num">80</span> Musah</div>
+                                    <div class="bench-player"><span class="bench-num">57</span> Sportiello</div>
+                                </div>
+
+                                <div style="font-weight:700; font-size:0.85rem; color:var(--secondary); margin-top:16px;">Inter Milan</div>
+                                <div class="bench-grid">
+                                    <div class="bench-player"><span class="bench-num">99</span> Taremi</div>
+                                    <div class="bench-player"><span class="bench-num">16</span> Frattesi</div>
+                                    <div class="bench-player"><span class="bench-num">7</span> Zieliński</div>
+                                    <div class="bench-player"><span class="bench-num">13</span> J. Martínez</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 3: STATS ── -->
+                <div id="tab-stats" class="tab-pane">
+                    <div class="glass" style="padding:35px; border-radius:20px; max-width:900px; margin:0 auto;">
+                        <h3 style="text-align:center; margin-bottom:30px; font-size:1.6rem;">1st Half Live Telemetry</h3>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">48%</span>
+                                <span class="stat-comp-label">Ball Possession</span>
+                                <span style="color:var(--secondary);">52%</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 48%;"></div>
+                                <div class="stat-bar-away" style="width: 52%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">6</span>
+                                <span class="stat-comp-label">Total Shots</span>
+                                <span style="color:var(--secondary);">5</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 55%;"></div>
+                                <div class="stat-bar-away" style="width: 45%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">3</span>
+                                <span class="stat-comp-label">Shots on Target</span>
+                                <span style="color:var(--secondary);">2</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 60%;"></div>
+                                <div class="stat-bar-away" style="width: 40%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-comp-row">
+                            <div class="stat-comp-meta">
+                                <span style="color:var(--primary);">7</span>
+                                <span class="stat-comp-label">Fouls</span>
+                                <span style="color:var(--secondary);">9</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-home" style="width: 44%;"></div>
+                                <div class="stat-bar-away" style="width: 56%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB 4: H2H ── -->
+                <div id="tab-h2h" class="tab-pane">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:35px;" class="h2h-grid">
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-history" style="color:var(--primary);"></i> Recent Milan Derbies</h3>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>AC Milan 2 - 1 Inter</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Serie A (Gabbia 89')</div>
+                                </div>
+                                <span class="form-badge w">W</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>AC Milan 1 - 2 Inter</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Serie A (Scudetto clincher)</div>
+                                </div>
+                                <span class="form-badge l">L</span>
+                            </div>
+                            <div class="h2h-card">
+                                <div>
+                                    <strong>Inter 5 - 1 AC Milan</strong>
+                                    <div style="font-size:0.8rem; color:var(--secondary-text);">Serie A (Mkhitaryan brace)</div>
+                                </div>
+                                <span class="form-badge l">L</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom:20px;"><i class="fas fa-trophy" style="color:var(--accent-gold);"></i> All-Time Derby Stats</h3>
+                            <div class="glass" style="padding:25px; border-radius:16px;">
+                                <div style="display:flex; justify-content:space-around; text-align:center; margin-bottom:20px;">
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--primary);">80</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Milan Wins</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary-text);">69</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Draws</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:2rem; font-weight:800; color:var(--secondary);">90</div>
+                                        <div style="font-size:0.8rem; color:var(--secondary-text); text-transform:uppercase;">Inter Wins</div>
+                                    </div>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--secondary-text); line-height:1.6; margin-bottom:0;">
+                                    The Derby della Madonnina remains one of the most intense and historic cross-city rivalries in world football history.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer id="site-footer"></footer>
+    <script src="nav.js"></script>
+</body>
+
+</html>
